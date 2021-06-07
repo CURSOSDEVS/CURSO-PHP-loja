@@ -9,19 +9,41 @@
      //variável  pag que será utilizada 
      public static $pag;
 
-     //método estático para obter a url principal do site
+     //variável statica que será utilizada para carregamento dos templates
+     private static $pasta_controller = 'controller';
+     private static $pasta_view = 'view';
+
+     /**************************************** */
+     //método estático para obter o caminho principal do site
      static function get_SiteHome()
      {
         return Config::SITE_URL .'/'. Config::SITE_PASTA;
      }
 
      //método para obter a raiz do site, utilizando a 
-     //função $_SERVER com DOCUMENT_ROOT que captura onde o site está hospedado
-     //
+     //função $_SERVER com DOCUMENT_ROOT que captura todo o endereço 
+     //do site
      static function get_SiteRaiz()
      {
          return $_SERVER['DOCUMENT_ROOT'] . "/" . Config::SITE_PASTA;
      }
+
+     /****************************************** */
+     //método para carregar o caminho onde ficarão os templates
+     static function get_SiteTema()
+     {
+        return self::get_SiteHome() . '/' . self::$pasta_view;
+     }
+
+     /***************************************** */
+     //metodo que carregará a página do carrinho
+     static function pag_Carrinho()
+     {
+        return self::get_SiteHome(). '/carrinho';
+     }
+
+     /*********************************************/
+     
 
      /**metodo estático para capturar a página */
      static function get_pagina()
