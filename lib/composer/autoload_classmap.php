@@ -6,7 +6,10 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'Carrinho' => $baseDir . '/model/Carrinho.class.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
+    'Config' => $baseDir . '/model/Config.class.php',
+    'Produtos' => $baseDir . '/model/Produtos.class.php',
     'Rotas' => $baseDir . '/model/Rotas.class.php',
     'Smarty' => $vendorDir . '/smarty/smarty/libs/Smarty.class.php',
     'SmartyBC' => $vendorDir . '/smarty/smarty/libs/SmartyBC.class.php',
@@ -182,4 +185,5 @@ return array(
     'TPC_yyStackEntry' => $vendorDir . '/smarty/smarty/libs/sysplugins/smarty_internal_configfileparser.php',
     'TP_yyStackEntry' => $vendorDir . '/smarty/smarty/libs/sysplugins/smarty_internal_templateparser.php',
     'Template' => $baseDir . '/model/Template.class.php',
+    'clientes' => $baseDir . '/model/Clientes.class.php',
 );

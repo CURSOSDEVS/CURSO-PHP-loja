@@ -9,6 +9,20 @@
      //variável  pag que será utilizada 
      public static $pag;
 
+     //método estático para obter a url principal do site
+     static function get_SiteHome()
+     {
+        return Config::SITE_URL .'/'. Config::SITE_PASTA;
+     }
+
+     //método para obter a raiz do site, utilizando a 
+     //função $_SERVER com DOCUMENT_ROOT que captura onde o site está hospedado
+     //
+     static function get_SiteRaiz()
+     {
+         return $_SERVER['DOCUMENT_ROOT'] . "/" . Config::SITE_PASTA;
+     }
+
      /**metodo estático para capturar a página */
      static function get_pagina()
      {
@@ -33,6 +47,7 @@
              * com dois componentes, o carrinho e teste. Quando
              * tiver o id do produto o mesmo será incluido no array  
              */
+            
             /*echo '<pre>';
             var_dump(self::$pag);
             echo '</pre>';*/

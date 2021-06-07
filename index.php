@@ -10,6 +10,8 @@ $smarty = new Template();
 //da classe Rotas
 Rotas::get_pagina();
 
+echo Rotas::get_SiteRaiz() . '<br>';
+
 //variáveis que serão lançadas para o a página do template
 $smarty->assign('NOME', 'CLAUDISNEI BELLO');
 

@@ -21,7 +21,10 @@ class ComposerStaticInit205be771275a431db174850d66890154
     );
 
     public static $classMap = array (
+        'Carrinho' => __DIR__ . '/../..' . '/model/Carrinho.class.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Config' => __DIR__ . '/../..' . '/model/Config.class.php',
+        'Produtos' => __DIR__ . '/../..' . '/model/Produtos.class.php',
         'Rotas' => __DIR__ . '/../..' . '/model/Rotas.class.php',
         'Smarty' => __DIR__ . '/..' . '/smarty/smarty/libs/Smarty.class.php',
         'SmartyBC' => __DIR__ . '/..' . '/smarty/smarty/libs/SmartyBC.class.php',
@@ -197,6 +200,7 @@ class ComposerStaticInit205be771275a431db174850d66890154
         'TPC_yyStackEntry' => __DIR__ . '/..' . '/smarty/smarty/libs/sysplugins/smarty_internal_configfileparser.php',
         'TP_yyStackEntry' => __DIR__ . '/..' . '/smarty/smarty/libs/sysplugins/smarty_internal_templateparser.php',
         'Template' => __DIR__ . '/../..' . '/model/Template.class.php',
+        'clientes' => __DIR__ . '/../..' . '/model/Clientes.class.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
