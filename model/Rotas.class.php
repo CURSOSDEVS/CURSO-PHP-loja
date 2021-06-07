@@ -21,7 +21,8 @@
             //acessar a página enviada via get, junto com o endereço
             //onde o controler está
             $pagina = 'controller/'.$_GET['pag'].'.php';
-            //vamos testar para ver se o arquivo existe
+
+            //vamos testar para ver se o arquivo existe                   
             if(file_exists($pagina))
             {
                 //se a página ixistir ela será incluida na index
