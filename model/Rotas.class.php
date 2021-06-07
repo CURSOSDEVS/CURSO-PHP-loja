@@ -6,6 +6,9 @@
 
  class Rotas 
  {
+     //variável  pag que será utilizada 
+     public static $pag;
+
      /**metodo estático para capturar a página */
      static function get_pagina()
      {
@@ -16,11 +19,33 @@
         //pag será a variável que conterá o nome da página
         if(isset($_GET['pag']))
         {   
+            //é o que como parâmetro na url da página
+            $pagina = $_GET['pag'];
+
+            //vai tratar a string, todo o local que tiver /
+            //criando um array da página digitada na url
+            //será capturado. self:: carrega a variável da classe atual
+            self::$pag = explode('/', $pagina);
             
+            /**codigo para verificar a criação do array com os
+             * itens das páginas que estao separadas por /
+             * ex: loja_virtual/carrinho/teste, vai retornar um array
+             * com dois componentes, o carrinho e teste. Quando
+             * tiver o id do produto o mesmo será incluido no array  
+             */
+            /*echo '<pre>';
+            var_dump(self::$pag);
+            echo '</pre>';*/
+
             //formando o nome do arquivo que será utilizada para
             //acessar a página enviada via get, junto com o endereço
             //onde o controler está
-            $pagina = 'controller/'.$_GET['pag'].'.php';
+            //$pagina = 'controller/' .$_GET['pag']. '.php';
+
+            //utilizando agora a variável $pag que já possui a indicação
+            //da página que será utilizada para abrir a página, lembrando
+            //que $pag é um array
+            $pagina = 'controller/' .self::$pag[0]. '.php';
 
             //vamos testar para ver se o arquivo existe                   
             if(file_exists($pagina))
