@@ -6,14 +6,10 @@ require "./lib/autoload.php";
 
 $smarty = new Template();
 
-//vamos veriricar se a página existe pelo método estático
-//da classe Rotas
-Rotas::get_pagina();
-
-echo Rotas::pag_Carrinho() . '<br>';
-
-//variáveis que serão lançadas para o a página do template
-$smarty->assign('NOME', 'CLAUDISNEI BELLO');
+//toda vez que for utilizado no template a variavel GET_TEMA
+//como referência para algum arquivo, será lançado o valor
+//de Rotas::get_SiteTema()
+$smarty->assign('GET_TEMA', Rotas::get_SiteTema());
 
 //metodo para abrir uma página .tpl 
 $smarty->display('index.tpl');

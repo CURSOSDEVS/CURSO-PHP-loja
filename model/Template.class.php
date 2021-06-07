@@ -2,7 +2,7 @@
 /**Classe para configurar as propriedades dos templates
  * que extende da smartyBC
  */
-class Template extends Smarty
+class Template extends SmartyBC
 {
     function __construct()
     {
