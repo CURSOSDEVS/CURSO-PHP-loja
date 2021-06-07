@@ -14,7 +14,7 @@ class Template extends Smarty
          * do smarty, porém agora será carregada automaticamente
          * ao instanciar a classe
          */
-    
+        
         //fornecendo a referência do local onde está a página do template
         $this->setTemplateDir('view/');
 
