@@ -15,7 +15,13 @@ $smarty->assign('GET_TEMA', Rotas::get_SiteTema());
 $smarty->assign('GET_HOME', Rotas::get_SiteHome());
 
 //rota do carrinho
-$smarty->assign('GET_CARRINHO', Rotas::pag_Carrinho());
+$smarty->assign('PAG_CARRINHO', Rotas::pag_Carrinho());
+
+//rota do contato
+$smarty->assign('PAG_CONTATO', Rotas::pag_Contato());
+
+//rota da minhaconta
+$smarty->assign('PAG_MINHACONTA', Rotas::pag_MinhaConta());
 
 //metodo para abrir uma página .tpl 
 $smarty->display('index.tpl');

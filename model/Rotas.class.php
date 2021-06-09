@@ -44,6 +44,23 @@
 
      /*********************************************/
      
+     /***************************************** */
+     //metodo que carregará a página do contato
+     static function pag_Contato()
+     {
+        return self::get_SiteHome(). '/contato';
+     }
+
+     /*********************************************/
+
+     /***************************************** */
+     //metodo que carregará a página minha conta
+     static function pag_MinhaConta()
+     {
+        return self::get_SiteHome(). '/minhaconta';
+     }
+
+     /*********************************************/
 
      /**metodo estático para capturar a página */
      static function get_pagina()

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-09 03:52:25
+/* Smarty version 3.1.39, created on 2021-06-10 01:26:06
   from 'C:\xampp\htdocs\loja_virtual\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60c01ed97dea02_22883642',
+  'unifunc' => 'content_60c14e0ed33f42_04859001',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '49b06a9b77acad904cbd587648d386a3f81f6c65' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja_virtual\\view\\index.tpl',
-      1 => 1623203535,
+      1 => 1623281159,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60c01ed97dea02_22883642 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60c14e0ed33f42_04859001 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html>
@@ -96,28 +96,13 @@ function content_60c01ed97dea02_22883642 (Smarty_Internal_Template $_smarty_tpl)
                                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['GET_HOME']->value;?>
 "><i class="glyphicon glyphicon-home"></i> Home </a> </li>
                                
-                                <li><a href="#"><i class="glyphicon glyphicon-user"></i> Minha Conta </a> </li>
-                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['GET_CARRINHO']->value;?>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_MINHACONTA']->value;?>
+"><i class="glyphicon glyphicon-user"></i> Minha Conta </a> </li>
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CARRINHO']->value;?>
 "><i class="glyphicon glyphicon-shopping-cart"></i> Carrinho </a> </li>
-                                <li><a href="#" ><i class="glyphicon glyphicon-envelope"></i> Contato </a> </li>
-                                
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Categorias <i class="glyphicon glyphicon-menu-down"></i></a> 
-                                
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span> categoria 1 </a> </li>
-                                     <li class="divider"></li>
-                                     <li><a href="#"><span class="glyphicon glyphicon-briefcase"></span> categoria 2 </a> </li>
-                                      <li class="divider"></li>
-                                      <li><a href="#"><i class="glyphicon glyphicon-bookmark"></i> categoria 3 </a> </li>
-                                      <li class="divider"></li>
-                                     <li><a href="#"> categoria 4 </a> </li>
-                                    
-                                    </ul>
-                                
-                                </li>
-                               
-                                
+                                <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CONTATO']->value;?>
+" ><i class="glyphicon glyphicon-envelope"></i> Contato </a> </li>
+                                                     
                             </ul>
                             
 
