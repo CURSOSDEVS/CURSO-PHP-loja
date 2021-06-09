@@ -11,6 +11,12 @@ $smarty = new Template();
 //de Rotas::get_SiteTema()
 $smarty->assign('GET_TEMA', Rotas::get_SiteTema());
 
+//rota do home da página principal
+$smarty->assign('GET_HOME', Rotas::get_SiteHome());
+
+//rota do carrinho
+$smarty->assign('GET_CARRINHO', Rotas::pag_Carrinho());
+
 //metodo para abrir uma página .tpl 
 $smarty->display('index.tpl');
 
