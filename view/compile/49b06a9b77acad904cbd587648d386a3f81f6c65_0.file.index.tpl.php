@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-03 22:57:28
+/* Smarty version 3.1.39, created on 2021-07-03 23:31:31
   from 'C:\xampp\htdocs\loja_virtual\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60e0cf38bcbd59_40613259',
+  'unifunc' => 'content_60e0d73325b3d9_36755024',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '49b06a9b77acad904cbd587648d386a3f81f6c65' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja_virtual\\view\\index.tpl',
-      1 => 1625345844,
+      1 => 1625347879,
       2 => 'file',
     ),
   ),
@@ -20,12 +20,13 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60e0cf38bcbd59_40613259 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60e0d73325b3d9_36755024 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html>
     <head>
-        <title>Loja Virtual Legal</title>
+        <title><?php echo $_smarty_tpl->tpl_vars['TITULO_SITE']->value;?>
+</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         

@@ -23,6 +23,9 @@ $smarty->assign('PAG_CONTATO', Rotas::pag_Contato());
 //rota da minhaconta
 $smarty->assign('PAG_MINHACONTA', Rotas::pag_MinhaConta());
 
+//Enviando o titulo do site
+$smarty->assign('TITULO_SITE', Config::SITE_NOME);
+
 //metodo para abrir uma página .tpl 
 $smarty->display('index.tpl');
 
