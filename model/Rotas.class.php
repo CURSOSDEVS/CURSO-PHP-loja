@@ -25,7 +25,7 @@
      //do site
      static function get_SiteRaiz()
      {
-         return $_SERVER['DOCUMENT_ROOT'] . "/" . Config::SITE_PASTA;
+         return $_SERVER['DOCUMENT_ROOT'] . '/' . Config::SITE_PASTA;
      }
 
      /****************************************** */
@@ -42,8 +42,6 @@
         return self::get_SiteHome(). '/carrinho';
      }
 
-     /*********************************************/
-     
      /***************************************** */
      //metodo que carregará a página do contato
      static function pag_Contato()
@@ -53,7 +51,6 @@
 
      /*********************************************/
 
-     /***************************************** */
      //metodo que carregará a página minha conta
      static function pag_MinhaConta()
      {

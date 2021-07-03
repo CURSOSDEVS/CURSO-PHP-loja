@@ -7,8 +7,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link href="{$GET_TEMA}/tema/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="{$GET_TEMA}/tema/css/contato.css" rel="stylesheet" type="text/css"/>
+   
         <script src="{$GET_TEMA}/tema/js/jquery-2.2.1.min.js" type="text/javascript"></script>
         <script src="{$GET_TEMA}/tema/js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="{$GET_TEMA}/tema/js/contato.js" type="text/javascript"></script>
         <!-- meu aquivo pessoal de CSS-->
         <link href="{$GET_TEMA}/tema/css/tema.css" rel="stylesheet" type="text/css"/>
      <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->
@@ -57,8 +60,7 @@
                         
                         <div class="collapse navbar-collapse" id="navbar">
                             <ul class="nav navbar-nav">
-                                <li><a href="{$GET_HOME}"><i class="glyphicon glyphicon-home"></i> Home </a> </li>
-                               
+                                <li><a href="{$GET_HOME}"><i class="glyphicon glyphicon-home"></i> Home </a> </li>                               
                                 <li><a href="{$PAG_MINHACONTA}"><i class="glyphicon glyphicon-user"></i> Minha Conta </a> </li>
                                 <li><a href="{$PAG_CARRINHO}"><i class="glyphicon glyphicon-shopping-cart"></i> Carrinho </a> </li>
                                 <li><a href="{$PAG_CONTATO}" ><i class="glyphicon glyphicon-envelope"></i> Contato </a> </li>

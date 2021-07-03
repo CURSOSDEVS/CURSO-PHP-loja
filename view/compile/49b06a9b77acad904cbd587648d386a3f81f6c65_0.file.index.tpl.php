@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-06-10 01:26:06
+/* Smarty version 3.1.39, created on 2021-07-03 22:57:28
   from 'C:\xampp\htdocs\loja_virtual\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60c14e0ed33f42_04859001',
+  'unifunc' => 'content_60e0cf38bcbd59_40613259',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '49b06a9b77acad904cbd587648d386a3f81f6c65' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja_virtual\\view\\index.tpl',
-      1 => 1623281159,
+      1 => 1625345844,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60c14e0ed33f42_04859001 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60e0cf38bcbd59_40613259 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html>
@@ -31,6 +31,9 @@ function content_60c14e0ed33f42_04859001 (Smarty_Internal_Template $_smarty_tpl)
         
         <link href="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
+/tema/css/contato.css" rel="stylesheet" type="text/css"/>
+   
         <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/js/jquery-2.2.1.min.js" type="text/javascript"><?php echo '</script'; ?>
@@ -38,6 +41,10 @@ function content_60c14e0ed33f42_04859001 (Smarty_Internal_Template $_smarty_tpl)
         <?php echo '<script'; ?>
  src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
 /tema/js/bootstrap.min.js" type="text/javascript"><?php echo '</script'; ?>
+>
+        <?php echo '<script'; ?>
+ src="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
+/tema/js/contato.js" type="text/javascript"><?php echo '</script'; ?>
 >
         <!-- meu aquivo pessoal de CSS-->
         <link href="<?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
@@ -94,8 +101,7 @@ function content_60c14e0ed33f42_04859001 (Smarty_Internal_Template $_smarty_tpl)
                         <div class="collapse navbar-collapse" id="navbar">
                             <ul class="nav navbar-nav">
                                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['GET_HOME']->value;?>
-"><i class="glyphicon glyphicon-home"></i> Home </a> </li>
-                               
+"><i class="glyphicon glyphicon-home"></i> Home </a> </li>                               
                                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_MINHACONTA']->value;?>
 "><i class="glyphicon glyphicon-user"></i> Minha Conta </a> </li>
                                 <li><a href="<?php echo $_smarty_tpl->tpl_vars['PAG_CARRINHO']->value;?>
