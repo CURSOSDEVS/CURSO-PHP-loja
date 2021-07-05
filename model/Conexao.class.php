@@ -4,6 +4,7 @@ Class Conexao extends Config
 {
 
     private $host, $usuario, $senha, $banco, $prefix;
+    private $obj;//será utilizado para receber as queries
 
     function __construct()
     {
@@ -37,6 +38,18 @@ Class Conexao extends Config
         ];
         
         $link = new PDO("mysql:host={$this->host};dbname={$this->banco}", $this->usuario, $this->senha, $options);
+
+        return $link;
+    }
+
+    //metodo para executar as queries do banco
+    function executeSQL($txtSQL, array $parametros = NULL)
+    {
+        //armazenando em obj a preparacao da query
+        $this->obj = $this->conectar()->prepare($txtSQL);
+        //executando a query  no banco
+        return $this->obj->execute();
+
     }
 
 
