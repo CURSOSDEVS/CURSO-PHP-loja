@@ -7,11 +7,24 @@ Class Conexao extends Config
 
     function __construct()
     {
-        self::$host = self::BD_HOST;
-        self::$senha = self::BD_SENHA;
-        self::$usuario = self::BD_USER;
-        self::$banco = self::BD_BANCO;
-        self::$prefix = self::BD_PREFIX;
+
+        $this->host = self::BD_HOST;
+        $this->senha = self::BD_SENHA;
+        $this->usuario = self::BD_USER;
+        $this->banco = self::BD_BANCO;
+        $this->prefix = self::BD_PREFIX;
+
+        try {
+            //verificando se a conexão já existe
+            if($this->conectar() === NULL)
+            {
+                 $this->conectar();
+            }
+           
+        } catch (Exception $e) {
+            exit($e->getMessage().'<h2> Erro na conexão com o banco de dados</h2>');
+        }
+
     }
 
     private function conectar()
@@ -19,10 +32,11 @@ Class Conexao extends Config
         //a variável opção serve para codificar os valores do banco para utf-8 caso o banco não esteja configurado
         //para isso
         $options = [
-            PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf-8",
+            PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
             PDO::ATTR_ERRMODE => PDO::ERRMODE_WARNING
         ];
-        $link = new PDO("mysql:host={$this->host};dbname={$this->banco}",self::$usuario, self::$senha, $options);
+        
+        $link = new PDO("mysql:host={$this->host};dbname={$this->banco}", $this->usuario, $this->senha, $options);
     }
 
 

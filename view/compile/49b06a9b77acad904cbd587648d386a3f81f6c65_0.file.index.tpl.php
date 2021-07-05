@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-05 12:59:53
+/* Smarty version 3.1.39, created on 2021-07-05 14:47:30
   from 'C:\xampp\htdocs\loja_virtual\view\index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60e2e6295f4720_26059268',
+  'unifunc' => 'content_60e2ff62360018_11226482',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '49b06a9b77acad904cbd587648d386a3f81f6c65' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja_virtual\\view\\index.tpl',
-      1 => 1625482790,
+      1 => 1625483017,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60e2e6295f4720_26059268 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60e2ff62360018_11226482 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 
 <html>
@@ -63,8 +63,7 @@ function content_60e2e6295f4720_26059268 (Smarty_Internal_Template $_smarty_tpl)
     
     </head>
     <body>
-        <p><?php echo $_smarty_tpl->tpl_vars['GET_TEMA']->value;?>
-</p>
+        
         <!-- começa  o container geral -->
         <div class="container-fluid">
             
