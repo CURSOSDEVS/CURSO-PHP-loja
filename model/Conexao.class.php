@@ -3,9 +3,9 @@
 Class Conexao extends Config
 {
 
-    private $host, $usuario, $senha, $banco, $prefix;
-    private $obj;//será utilizado para receber as queries
-
+    private $host, $usuario, $senha, $banco;
+    protected $obj, $itens= [], $prefix; //será utilizado para receber as queries
+    
     function __construct()
     {
 
@@ -43,26 +43,19 @@ Class Conexao extends Config
     }
 
     //metodo para executar as queries do banco
-    function executeSQL($txtSQL, array $parametros = NULL)
+    function executeSQL($txtSQL)
     {
-        //Se não for passado nenhum parâmetro significa que a querie é somente de busca
-        //então será mostrado o resultado em formato de array
-        if($parametros === NULL)
-        {
-             //armazenando em obj a preparacao da query
-            $this->obj = $this->conectar()->prepare($txtSQL);
-            //executando a query  no banco
-            $this->obj->execute();
+        
+        //armazenando em obj a preparacao da query
+        $this->obj = $this->conectar()->prepare($txtSQL);
+        //executando a query  no banco
+        return $this->obj->execute();
+    }
 
-            return $this->obj->fetch(PDO::FETCH_ASSOC);
-        }else
-        {
-             //armazenando em obj a preparacao da query
-             $this->obj = $this->conectar()->prepare($txtSQL);
-             //executando a query  no banco
-             $this->obj->execute();
-        }
-       
+    //Metodo para listar os dados
+    function listarDados ()
+    {
+        return $this->obj->fetch(PDO::FETCH_ASSOC);
     }
 
     //metodo para verificar se a consulta ou tabela retornou algum valor
