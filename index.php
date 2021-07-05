@@ -28,6 +28,13 @@ $smarty->assign('TITULO_SITE', Config::SITE_NOME);
 
 //testando o banco de dados
 $dados = new Conexao();
+$sql = 'SELECT * FROM categorias';
+$resultado = $dados->executeSQL($sql);
+
+echo'<pre>';
+var_dump($resultado);
+echo'</pre>';
+//
 
 //metodo para abrir uma página .tpl 
 $smarty->display('index.tpl');

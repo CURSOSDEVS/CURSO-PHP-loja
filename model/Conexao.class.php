@@ -45,12 +45,28 @@ Class Conexao extends Config
     //metodo para executar as queries do banco
     function executeSQL($txtSQL, array $parametros = NULL)
     {
-        //armazenando em obj a preparacao da query
-        $this->obj = $this->conectar()->prepare($txtSQL);
-        //executando a query  no banco
-        return $this->obj->execute();
+        //Se não for passado nenhum parâmetro significa que a querie é somente de busca
+        //então será mostrado o resultado em formato de array
+        if($parametros === NULL)
+        {
+             //armazenando em obj a preparacao da query
+            $this->obj = $this->conectar()->prepare($txtSQL);
+            //executando a query  no banco
+            $this->obj->execute();
+
+            return $this->obj->fetch(PDO::FETCH_ASSOC);
+        }else
+        {
+             //armazenando em obj a preparacao da query
+             $this->obj = $this->conectar()->prepare($txtSQL);
+             //executando a query  no banco
+             $this->obj->execute();
+        }
+       
 
     }
+
+
 
 
 
