@@ -4,16 +4,16 @@
     <head>
         <title>{$TITULO_SITE}</title>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link href="{$GET_TEMA}/tema/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <link href="{$GET_TEMA}/tema/css/contato.css" rel="stylesheet" type="text/css"/>
-   
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        <link href="{$GET_TEMA}/tema/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>        
         <script src="{$GET_TEMA}/tema/js/jquery-2.2.1.min.js" type="text/javascript"></script>
         <script src="{$GET_TEMA}/tema/js/bootstrap.min.js" type="text/javascript"></script>
+       
+        <!-- meus aquivos pessoais de CSS / JS-->
         <script src="{$GET_TEMA}/tema/js/contato.js" type="text/javascript"></script>
-        <!-- meu aquivo pessoal de CSS-->
+        <link href="{$GET_TEMA}/tema/css/contato.css" rel="stylesheet" type="text/css"/>
         <link href="{$GET_TEMA}/tema/css/tema.css" rel="stylesheet" type="text/css"/>
+       
      <!-- HTML5 shim e Respond.js para suporte no IE8 de elementos HTML5 e media queries -->
     <!-- ALERTA: Respond.js não funciona se você visualizar uma página file:// -->
     <!--[if lt IE 9]>
@@ -147,9 +147,12 @@
             
             <!-- começa div rodape -->
             <div class="row" id="rodape">
-            
-            
-            </div><!-- fim div rodape-->
+                <center>
+                    <h4>{$TITULO_SITE}</h4>
+                    <p>Todos os direitos reservados - Hugo Vasconcelos - Q-cursos</p>
+                </center>            
+            </div>
+            <!-- fim div rodape-->
             
             
             
