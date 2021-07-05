@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-03 23:25:41
+/* Smarty version 3.1.39, created on 2021-07-05 18:08:58
   from 'C:\xampp\htdocs\loja_virtual\view\contato.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60e0d5d5a72211_09578535',
+  'unifunc' => 'content_60e32e9a9b0db2_21094846',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1b5b5868badbadf43828d39c078e64607706b6e9' => 
     array (
       0 => 'C:\\xampp\\htdocs\\loja_virtual\\view\\contato.tpl',
-      1 => 1625347531,
+      1 => 1625501329,
       2 => 'file',
     ),
   ),
@@ -20,11 +20,11 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60e0d5d5a72211_09578535 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60e32e9a9b0db2_21094846 (Smarty_Internal_Template $_smarty_tpl) {
 ?><div class="container">
     <div class="row">
         
-        <form class="form-horizontal" id="frmcontatoazul">
+        <form class="form-horizontal" id="frmcontatoazul" action="envio">
           <fieldset>
           
             <!-- Form Name -->

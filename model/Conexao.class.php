@@ -63,16 +63,21 @@ Class Conexao extends Config
              $this->obj->execute();
         }
        
-
     }
 
+    //metodo para verificar se a consulta ou tabela retornou algum valor
+    function totalDados()
+    {
+        return $this->obj->rowCount();
+    }
 
+    //metodo para obter os itens, pode ser dados vindo de um array
+    function getItens()
+    {
+        return $this->obj->itens;
+    }
+      
 
-
-
-    
-        
-    
 }
 
 ?>

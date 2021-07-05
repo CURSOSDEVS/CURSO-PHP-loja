@@ -30,11 +30,11 @@ $smarty->assign('TITULO_SITE', Config::SITE_NOME);
 $dados = new Conexao();
 $sql = 'SELECT * FROM categorias';
 $resultado = $dados->executeSQL($sql);
+$total = $dados->totalDados();
 
-echo'<pre>';
-var_dump($resultado);
-echo'</pre>';
-//
+//echo'<pre>';
+//var_dump($total);
+//echo'</pre>';
 
 //metodo para abrir uma página .tpl 
 $smarty->display('index.tpl');
