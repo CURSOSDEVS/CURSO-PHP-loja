@@ -1,8 +1,11 @@
 <?php
 
-class Produtos
+class Produtos extends Conexao
 {
-    
+    function __construct()
+    {
+        
+    }
 }
 
 ?>
