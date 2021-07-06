@@ -58,6 +58,13 @@
      }
 
      /*********************************************/
+     //metodo que carregará a página de produtos
+     static function pag_Produtos()
+     {
+        return self::get_SiteHome(). '/produtos';
+     }
+
+     /*********************************************/
 
      /**metodo estático para capturar a página */
      static function get_pagina()

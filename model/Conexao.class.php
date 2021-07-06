@@ -22,7 +22,7 @@ Class Conexao extends Config
                  $this->conectar();
             }
            
-        } catch (Exception $e) {
+        }catch (Exception $e){
             exit($e->getMessage().'<h2> Erro na conexão com o banco de dados</h2>');
         }
 
@@ -43,9 +43,8 @@ Class Conexao extends Config
     }
 
     //metodo para executar as queries do banco
-    function executeSQL($txtSQL)
-    {
-        
+    function executeSQL($txtSQL, array $params = NULL)
+    {    
         //armazenando em obj a preparacao da query
         $this->obj = $this->conectar()->prepare($txtSQL);
         //executando a query  no banco
@@ -67,7 +66,7 @@ Class Conexao extends Config
     //metodo para obter os itens, pode ser dados vindo de um array
     function getItens()
     {
-        return $this->obj->itens;
+        return $this->itens;
     }
       
 

@@ -12,10 +12,11 @@ class Produtos extends Conexao
     function getProdutos()
     {
         //seleciona todos os produtos de uma determinada categoria, criando um prefixo para cada tabela
-        $txtSql = 'SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c ON 
-                    WHERE p.pro_categoria = c.cate_id';
+        $txtSql = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c ON p.pro_categoria = c.cat_id";
         
-        $txtSql.= 'ORDER BY  prod_id DESC';
+        //$txtSql.= 'ORDER BY  prod_id DESC';
+
+        $this->executeSQL($txtSql);
 
         $this->getLista();
         
@@ -39,8 +40,8 @@ class Produtos extends Conexao
                 'pro_img'=>$lista['pro_img'],
                 'pro_slug'=>$lista['pro_slug'],
                 'pro_ref'=>$lista['pro_ref'],
-                'cate_nome'=>$lista['cate_nome'],
-                'cate_id'=>$lista['cate_id']
+                'cat_nome'=>$lista['cat_nome'],
+                'cat_id'=>$lista['cat_id']
             ];
             $i++;
         }

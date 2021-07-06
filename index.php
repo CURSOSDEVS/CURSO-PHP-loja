@@ -27,14 +27,17 @@ $smarty->assign('PAG_MINHACONTA', Rotas::pag_MinhaConta());
 $smarty->assign('TITULO_SITE', Config::SITE_NOME);
 
 //testando o banco de dados
-$dados = new Conexao();
-$sql = 'SELECT * FROM categorias';
-$resultado = $dados->executeSQL($sql);
-$total = $dados->totalDados();
+//$dados = new Conexao();
+//$sql = 'SELECT * FROM categorias';
+//$resultado = $dados->executeSQL($sql);
+//$total = $dados->totalDados();
 
 //echo'<pre>';
 //var_dump($total);
 //echo'</pre>';
+
+//rota da página de produtos
+$smarty->assign('PAG_PRODUTOS', Rotas::pag_Produtos());
 
 //metodo para abrir uma página .tpl 
 $smarty->display('index.tpl');

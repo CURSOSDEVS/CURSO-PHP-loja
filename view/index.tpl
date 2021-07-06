@@ -119,7 +119,7 @@
                     
                     <ul class="breadcrumb">
                         <li><a href="{$GET_HOME}"><i class="glyphicon glyphicon-home"></i> Home </a></li>
-                        <li><a href="#"> Produtos </a></li>
+                        <li><a href="{$PAG_PRODUTOS}"> Produtos </a></li>
                         <li><a href="#"> Info </a></li>
                     </ul>   
                     <!-- fim do menu breadcrumb-->  
