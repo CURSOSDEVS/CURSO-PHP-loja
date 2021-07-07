@@ -15,7 +15,7 @@
             <li class="col-md-4">
                 <div class="thumbnail">
                     <a href="">
-                        <img src="{$PASTA_IMAGENS}/{$P.pro_img}" alt="">
+                        <img src="{$P.pro_img}" alt="">
                         
                         <div class="caption">
                             <h4 class="text-center">{$P.pro_nome}</h4>

@@ -7,7 +7,6 @@
     $produto->getProdutos();
    
     $smarty->assign('PROD', $produto->getItens());
-    $smarty->assign('PASTA_IMAGENS', Rotas::get_pasta_imagens());
      echo '<pre>';
     //var_dump($produto->getItens());
     echo '</pre>';

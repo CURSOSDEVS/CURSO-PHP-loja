@@ -81,11 +81,13 @@
         return self::get_SiteHome() . '/' . self::get_pasta_imagens();
      }
 
-     /*metodo que irá carregar o link da imagem, tendo com parâmetros o nome, largura, altura da imagen e opacidade
+     /*metodo que irá carregar o link da imagem, tendo com parâmetros o nome, largura, altura da imagen 
      será utilizado o arquivo thumb.php que irá redimensionar as imagens*/
-     static function linkImagem($nome, $largura, $altura)
+     static function get_linkImagem($nome, $largura, $altura)
      {
-        $imagem = self::get_URL_imagens()."thumb.php?src={$nome}&$w={$largura}&$h={$altura}&zc=1";
+        $imagem = self::get_URL_imagens().'/'."thumb.php?src={$nome}&w={$largura}&h={$altura}&zc=1";
+
+        return $imagem;
      }
 
      /************************************************/

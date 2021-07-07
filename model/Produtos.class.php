@@ -37,7 +37,8 @@ class Produtos extends Conexao
                 'pro_altura'=>$lista['pro_altura'],
                 'pro_largura'=>$lista['pro_largura'],
                 'pro_comprimento'=>$lista['pro_comprimento'],
-                'pro_img'=>$lista['pro_img'],
+                //utilizando metodo para carregar o endereco e redimensionar a foto
+                'pro_img'=>Rotas::get_linkImagem($lista['pro_img'],180,180),
                 'pro_slug'=>$lista['pro_slug'],
                 'pro_ref'=>$lista['pro_ref'],
                 'cat_nome'=>$lista['cat_nome'],
