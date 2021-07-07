@@ -51,8 +51,10 @@ class Produtos extends Conexao
                 'pro_altura'=>$lista['pro_altura'],
                 'pro_largura'=>$lista['pro_largura'],
                 'pro_comprimento'=>$lista['pro_comprimento'],
-                //utilizando metodo para carregar o endereco e redimensionar a foto
+                //utilizando metodo para carregar o endereco e redimensionar as fotos
                 'pro_img'=> Rotas::get_linkImagem($lista['pro_img'],180,180),
+                'pro_img_g'=> Rotas::get_linkImagem($lista['pro_img'],300,300),
+                'pro_img_p'=> Rotas::get_linkImagem($lista['pro_img'],70,70),
                 'pro_slug'=>$lista['pro_slug'],
                 'pro_ref'=>$lista['pro_ref'],
                 'cat_nome'=>$lista['cat_nome'],

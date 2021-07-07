@@ -9,7 +9,7 @@
         {*  div da esquerda imagem do produto  *}
         <div class="col-md-6 ">
 
-            <img class="thumbnail" src="{$P.pro_img}" alt="" > 
+            <img class="thumbnail" src="{$P.pro_img_g}" alt="" > 
 
         </div>
 
