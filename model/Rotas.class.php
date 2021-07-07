@@ -86,7 +86,6 @@
      static function get_linkImagem($nome, $largura, $altura)
      {
         $imagem = self::get_URL_imagens().'/'."thumb.php?src={$nome}&w={$largura}&h={$altura}&zc=1";
-
         return $imagem;
      }
 
