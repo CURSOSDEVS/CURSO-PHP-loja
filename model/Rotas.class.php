@@ -69,11 +69,26 @@
 
      /*********************************************/
 
-     //metodo para carregar a url da pasta de imagens
-     static function pasta_imagens()
+     //metodos para carregar a pasta de imagens
+     static function get_pasta_imagens()
      {
         return self::$pasta_imagens;
      }
+
+     //metodo para carregar toda a url da imagem
+     static function get_URL_imagens()
+     {
+        return self::get_SiteHome() . '/' . self::get_pasta_imagens();
+     }
+
+     /*metodo que irá carregar o link da imagem, tendo com parâmetros o nome, largura, altura da imagen e opacidade
+     será utilizado o arquivo thumb.php que irá redimensionar as imagens*/
+     static function linkImagem($nome, $largura, $altura)
+     {
+        $imagem = self::get_URL_imagens()."thumb.php?src={$nome}&$w={$largura}&$h={$altura}&zc=1";
+     }
+
+     /************************************************/
 
      /**metodo estático para capturar a página */
      static function get_pagina()
