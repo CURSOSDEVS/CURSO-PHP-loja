@@ -15,11 +15,11 @@
             <li class="col-md-4">
                 <div class="thumbnail">
                     <a href="">
-                        <img src="" alt="">
+                        <img src="{$PASTA_IMAGENS}/{$P.pro_img}" alt="">
                         
                         <div class="caption">
                             <h4 class="text-center">{$P.pro_nome}</h4>
-                            <h3 class="text-center text-danger">VALOR</h3>
+                            <h3 class="text-center text-danger">{$P.pro_valor}</h3>
                         </div>
                     </a>
                 </div>

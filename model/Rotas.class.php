@@ -13,6 +13,9 @@
      private static $pasta_controller = 'controller';
      private static $pasta_view = 'view';
 
+     //variavel statica utilizada para carregar o caminho das imagens dos produtos
+     private static $pasta_imagens = 'media/images';
+
      /**************************************** */
      //método estático para obter o caminho principal do site
      static function get_SiteHome()
@@ -65,6 +68,12 @@
      }
 
      /*********************************************/
+
+     //metodo para carregar a url da pasta de imagens
+     static function pasta_imagens()
+     {
+        return self::$pasta_imagens;
+     }
 
      /**metodo estático para capturar a página */
      static function get_pagina()
