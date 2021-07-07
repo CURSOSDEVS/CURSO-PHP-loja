@@ -90,7 +90,13 @@
      }
 
      /************************************************/
+     //rota para a página de informação de produto
+     static function get_ProdutosInfo()
+     {
+        return self::get_SiteHome().'/produtos_info';
+     }
 
+     /************************************************/
      /**metodo estático para capturar a página */
      static function get_pagina()
      {

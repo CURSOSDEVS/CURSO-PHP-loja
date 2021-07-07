@@ -11,10 +11,10 @@
 <section id="produtos" class="row">
     <ul style="list-style: none">
         <div class="row" id="pularlinha">
-            {foreach from=$PROD item=P}
+            {foreach from=$PRO item=P}
             <li class="col-md-4">
                 <div class="thumbnail">
-                    <a href="">
+                    <a href="{$PRO_INFO}/{$P.pro_id}/{$P.pro_slug}">
                         <img src="{$P.pro_img}" alt="">
                         
                         <div class="caption">

@@ -14,7 +14,21 @@ class Produtos extends Conexao
         //seleciona todos os produtos de uma determinada categoria, criando um prefixo para cada tabela
         $txtSql = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c ON p.pro_categoria = c.cat_id";
         
-        //$txtSql.= 'ORDER BY  prod_id DESC';
+        $txtSql.= " ORDER BY  pro_id DESC";
+
+        $this->executeSQL($txtSql);
+
+        $this->getLista();
+        
+    }
+
+    function getProdutosID($id)
+    {
+        //seleciona todos os produtos de uma determinada categoria, criando um prefixo para cada tabela
+        $txtSql = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c 
+        ON p.pro_categoria = c.cat_id";
+        
+        $txtSql .= " AND pro_id = {$id}";
 
         $this->executeSQL($txtSql);
 
@@ -38,7 +52,7 @@ class Produtos extends Conexao
                 'pro_largura'=>$lista['pro_largura'],
                 'pro_comprimento'=>$lista['pro_comprimento'],
                 //utilizando metodo para carregar o endereco e redimensionar a foto
-                'pro_img'=>Rotas::get_linkImagem($lista['pro_img'],180,180),
+                'pro_img'=> Rotas::get_linkImagem($lista['pro_img'],180,180),
                 'pro_slug'=>$lista['pro_slug'],
                 'pro_ref'=>$lista['pro_ref'],
                 'cat_nome'=>$lista['cat_nome'],
