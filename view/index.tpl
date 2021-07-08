@@ -100,18 +100,9 @@
                 <div class="list-group">
                     <span class="list-group-item active"> Categorias</span>
                     {foreach from=$GET_CATEGORIAS item=C}
-                        <a href="#" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span>{$C.cat_nome}</a>     
+                        <a href="{$C.cat_link}" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span>{$C.cat_nome}</a>     
                     {/foreach}
-                   <!-- <a href="#" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span> Presentes</a> 
-                    <a href="#" class="list-group-item"><i class="glyphicon glyphicon-menu-right"></i> Brinquedos</a> 
-                    
-                    <a href="#" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span> Presentes</a> 
-                    <a href="#" class="list-group-item"><i class="glyphicon glyphicon-menu-right"></i> Brinquedos</a> 
-                    
-                    <a href="#" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span> Presentes</a> 
-                    <a href="#" class="list-group-item"><i class="glyphicon glyphicon-menu-right"></i> Brinquedos</a> 
-                    -->
-                    
+   
                 </div><!--fim da list group-->              
                               
                 </div> <!-- finm coluna esquerda -->  

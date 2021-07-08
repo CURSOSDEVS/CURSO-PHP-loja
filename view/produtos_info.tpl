@@ -21,7 +21,9 @@
             <hr>
                     
             <div class="col-md-6">
-                <h3 class="text-center preco">R$ {$P.pro_valor}</h3>               
+                <h3 class="text-center preco">R$ {Ferramentas::formatarValor($P.pro_valor)}
+                    
+                </h3>             
             </div>
         
             <div class="col-md-6">

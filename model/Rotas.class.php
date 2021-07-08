@@ -97,7 +97,7 @@
      }
 
      /************************************************/
-     //metodo para carregar todas as categorias
+     //metodo para carregar todas as categorias na página principal
      static function get_Categorias()
      {
         $categorias = new Categorias();
@@ -107,6 +107,8 @@
         return $categorias->getItens();
      }
 
+     /************************************************* */
+     
      /**metodo estático para capturar a página */
      static function get_pagina()
      {

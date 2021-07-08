@@ -19,7 +19,7 @@
                         
                         <div class="caption">
                             <h4 class="text-center">{$P.pro_nome}</h4>
-                            <h3 class="text-center text-danger">{$P.pro_valor}</h3>
+                            <h3 class="text-center text-danger">R$ {Ferramentas::formatarValor($P.pro_valor)}</h3>
                         </div>
                     </a>
                 </div>
