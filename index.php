@@ -23,8 +23,14 @@ $smarty->assign('PAG_CONTATO', Rotas::pag_Contato());
 //rota da minhaconta
 $smarty->assign('PAG_MINHACONTA', Rotas::pag_MinhaConta());
 
+//ROTA PARA PRODUTOS
+$smarty->assign('PAG_PRODUTOS', Rotas::pag_Produtos());
+
 //Enviando o titulo do site
 $smarty->assign('TITULO_SITE', Config::SITE_NOME);
+
+//Enviando as categorias
+$smarty->assign('GET_CATEGORIAS', Rotas::get_Categorias() );
 
 //testando o banco de dados
 //$dados = new Conexao();
@@ -33,7 +39,7 @@ $smarty->assign('TITULO_SITE', Config::SITE_NOME);
 //$total = $dados->totalDados();
 
 //echo'<pre>';
-//var_dump($total);
+//var_dump(Rotas::get_Categorias());
 //echo'</pre>';
 
 //rota da página de produtos

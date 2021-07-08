@@ -32,7 +32,7 @@
                  
                 
                 <div class="container">
-                <img src="{$GET_TEMA}/imagens/logo.png" alt=""> 
+                <img src="{$GET_TEMA}/images/logo.png" alt=""> 
                        
                 </div>    
             
@@ -61,6 +61,7 @@
                         <div class="collapse navbar-collapse" id="navbar">
                             <ul class="nav navbar-nav">
                                 <li><a href="{$GET_HOME}"><i class="glyphicon glyphicon-home"></i> Home </a> </li>                               
+                                <li><a href="{$PAG_PRODUTOS}"><i class="glyphicon glyphicon-tag"></i> Produtos </a> </li>
                                 <li><a href="{$PAG_MINHACONTA}"><i class="glyphicon glyphicon-user"></i> Minha Conta </a> </li>
                                 <li><a href="{$PAG_CARRINHO}"><i class="glyphicon glyphicon-shopping-cart"></i> Carrinho </a> </li>
                                 <li><a href="{$PAG_CONTATO}" ><i class="glyphicon glyphicon-envelope"></i> Contato </a> </li>
@@ -98,8 +99,10 @@
                     
                 <div class="list-group">
                     <span class="list-group-item active"> Categorias</span>
-                    
-                    <a href="#" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span> Presentes</a> 
+                    {foreach from=$GET_CATEGORIAS item=C}
+                        <a href="#" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span>{$C.cat_nome}</a>     
+                    {/foreach}
+                   <!-- <a href="#" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span> Presentes</a> 
                     <a href="#" class="list-group-item"><i class="glyphicon glyphicon-menu-right"></i> Brinquedos</a> 
                     
                     <a href="#" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span> Presentes</a> 
@@ -107,7 +110,7 @@
                     
                     <a href="#" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span> Presentes</a> 
                     <a href="#" class="list-group-item"><i class="glyphicon glyphicon-menu-right"></i> Brinquedos</a> 
-                    
+                    -->
                     
                 </div><!--fim da list group-->              
                               
@@ -116,12 +119,12 @@
                 <!-- coluna direita CONYEUDO CENTRAL -->
                 <div class="col-md-10">
                     
-                    
+                    <!--
                     <ul class="breadcrumb">
                         <li><a href="{$GET_HOME}"><i class="glyphicon glyphicon-home"></i> Home </a></li>
                         <li><a href="{$PAG_PRODUTOS}"> Produtos </a></li>
                         <li><a href="#"> Info </a></li>
-                    </ul>   
+                    </ul>   -->
                     <!-- fim do menu breadcrumb-->  
                     
                     <!--Onde serao adicionados os conteúdos
