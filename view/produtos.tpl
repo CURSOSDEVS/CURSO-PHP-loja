@@ -1,5 +1,10 @@
-<h3>Lista de produtos</h3>
+<h3>{$TITULO}</h3>
 <hr>
+
+<!-- verificando o total dos produtos-->
+{if $PRO_TOTAL < 1}
+    <h4 class="alert alert-danger">Nenhum produto encontrado</h4>
+{{/if}}
 
 <section id="paginacao" class="row">
     <center>

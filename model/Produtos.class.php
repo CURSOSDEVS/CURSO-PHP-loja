@@ -28,7 +28,26 @@ class Produtos extends Conexao
         $txtSql = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c 
         ON p.pro_categoria = c.cat_id";
         
-        $txtSql .= " AND pro_id = {$id}";
+        $txtSql .= " AND p.pro_id = :id";
+
+        //definindo os parâmetros
+        $params = array ( 
+                    ':id'=>(int)$id 
+                    );
+
+        $this->executeSQL($txtSql, $params);
+
+        $this->getLista();
+        
+    }
+
+    function getProdutosCateID($idCat)
+    {
+        //seleciona todos os produtos de uma determinada categoria, criando um prefixo para cada tabela
+        $txtSql = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c 
+        ON p.pro_categoria = c.cat_id";
+        
+        $txtSql .= " AND p.pro_categoria = {$idCat}";
 
         $this->executeSQL($txtSql);
 

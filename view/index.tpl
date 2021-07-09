@@ -99,10 +99,10 @@
                     
                 <div class="list-group">
                     <span class="list-group-item active"> Categorias</span>
+                    <a href="{$PAG_PRODUTOS}" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span>Todos</a>     
                     {foreach from=$GET_CATEGORIAS item=C}
                         <a href="{$C.cat_link}" class="list-group-item"><span class="glyphicon glyphicon-menu-right"></span>{$C.cat_nome}</a>     
-                    {/foreach}
-   
+                    {/foreach}                  
                 </div><!--fim da list group-->              
                               
                 </div> <!-- finm coluna esquerda -->  
