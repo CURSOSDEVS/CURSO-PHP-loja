@@ -9,4 +9,8 @@
 
     $smarty->display('produtos_info.tpl');
 
+    //echo '<pre>';
+    //var_dump($produto);
+  //  echo '</pre>';
+
 ?>

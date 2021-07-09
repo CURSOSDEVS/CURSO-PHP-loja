@@ -28,14 +28,14 @@ class Produtos extends Conexao
         $txtSql = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c 
         ON p.pro_categoria = c.cat_id";
         
-        $txtSql .= " AND p.pro_id = :id";
+        $txtSql .= " AND pro_id = :id";
 
         //definindo os parâmetros
-        $params = array ( 
+        $parametros = array ( 
                     ':id'=>(int)$id 
                     );
 
-        $this->executeSQL($txtSql, $params);
+        $this->executeSQL($txtSql, $parametros);
 
         $this->getLista();
         
@@ -47,9 +47,13 @@ class Produtos extends Conexao
         $txtSql = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c 
         ON p.pro_categoria = c.cat_id";
         
-        $txtSql .= " AND p.pro_categoria = {$idCat}";
+        $txtSql .= " AND p.pro_categoria = :idCat";
 
-        $this->executeSQL($txtSql);
+        $parametros = array (
+                        ':idCat'=>$idCat
+        );
+
+        $this->executeSQL($txtSql, $parametros);
 
         $this->getLista();
         

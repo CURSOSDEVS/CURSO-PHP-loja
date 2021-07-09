@@ -26,8 +26,9 @@
     //informação do total de dados
     $smarty->assign('PRO_TOTAL', $produto->totalDados());
 
-    //echo '<pre>';
-    //var_dump($produto->getItens());
-    //echo '</pre>';
+  
     $smarty->display('produtos.tpl');
+    //  echo '<pre>';
+    //var_dump($produto);
+    //echo '</pre>';
 ?>

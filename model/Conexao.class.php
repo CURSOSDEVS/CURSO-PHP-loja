@@ -48,11 +48,14 @@ Class Conexao extends Config
         //armazenando em obj a preparacao da query
         $this->obj = $this->conectar()->prepare($txtSQL);
         //verificando os parâmetros passados na url
-        if(count($params) > 0)
+        if(isset($params))
         {
-            foreach ($params as $key => $value) {
-                //guarda a informação do parâmetro
-                $this->obj->bindValue($key, $value);
+            if(count($params) > 0)
+            {
+                foreach ($params as $key => $value) {
+                    //guarda a informação do parâmetro
+                    $this->obj->bindValue($key, $value);
+                }
             }
         }
         //executando a query  no banco

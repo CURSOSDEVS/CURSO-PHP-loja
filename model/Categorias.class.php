@@ -10,7 +10,7 @@
 
         function getCategorias()
         {
-            $txtSQL = "SELECT * FROM categorias";
+            $txtSQL = "SELECT * FROM {$this->prefix}categorias";
 
             $txtSQL .= " ORDER BY cat_nome";
 
