@@ -24,10 +24,13 @@
             while($lista = $this->listarDados())
             {
                 $this->itens[$i] = [
-                    'img_nome'=>$lista['img_nome'],
+                    'img_id'=>$lista['img_id'],
+                    'img_nome'=>Rotas::get_linkImagem($lista['img_nome'],150,150),
                     'img_pro_id'=>$lista['img_pro_id'],
-                    'img_pasta'=>$lista['img_pasta']
+                    'img_link'=>Rotas::get_linkImagem($lista['img_nome'],500,500),
+                    'img_arquivo'=>$lista['img_nome']
                 ];
+                $i++;
             };
         }
     }

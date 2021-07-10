@@ -16,9 +16,6 @@
         $smarty->assign('TITULO', 'Lista de produtos');
     }
 
-
-    
-   
     $smarty->assign('PRO', $produto->getItens());
 
     //Informacao do produto

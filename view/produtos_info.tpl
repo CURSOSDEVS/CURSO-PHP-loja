@@ -48,14 +48,16 @@
 
               <ul style="list-style: none">
                  
-
-                      <li class="col-md-3 ">
+                    {foreach from=$Fotos item=F}
+                        <li class="col-md-3 ">                        
+                          <img src="{$F.img_nome}"  alt="" class="thumbnail">
+                        </li>
+                    {/foreach}
+                    <!--  <li class="col-md-3 ">
                           <img src="" alt="" class="thumbnail">
 
 
-                      </li>
-
-                 
+                      </li> -->     
               </ul>
               
 

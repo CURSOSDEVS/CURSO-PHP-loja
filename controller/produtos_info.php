@@ -7,10 +7,19 @@
     $smarty->assign('PRO', $produto->getItens());
     $smarty->assign('TEMA', Rotas::get_SiteTema());
 
+    //criando instancia para carregar as fotos do produto
+    $fotosProduto = new ProdutosImages();
+
+    //pegando o id do produto informado na rota
+    $fotosProduto->getImagesPro(Rotas::$pag[1]);
+
+    //enviando  o array para o template
+    $smarty->assign('Fotos', $fotosProduto->getItens() );
+
     $smarty->display('produtos_info.tpl');
 
     //echo '<pre>';
-    //var_dump($produto);
-  //  echo '</pre>';
+    //var_dump($fotosProduto);
+    //echo '</pre>';
 
 ?>
