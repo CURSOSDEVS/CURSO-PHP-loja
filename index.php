@@ -32,6 +32,9 @@ $smarty->assign('TITULO_SITE', Config::SITE_NOME);
 //Enviando as categorias
 $smarty->assign('GET_CATEGORIAS', Rotas::get_Categorias() );
 
+//Enviando a data atual para o template
+$smarty->assign('DATA_ATUAL', Ferramentas::dataAtualBR());
+
 //testando o banco de dados
 //$dados = new Conexao();
 //$sql = 'SELECT * FROM categorias';

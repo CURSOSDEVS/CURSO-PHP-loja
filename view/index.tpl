@@ -143,7 +143,7 @@
             <div class="row" id="rodape">
                 <center>
                     <h4>{$TITULO_SITE}</h4>
-                    <p>Todos os direitos reservados - Hugo Vasconcelos - Q-cursos</p>
+                    <p>Todos os direitos reservados - Hugo Vasconcelos - Q-cursos - Data Atual: {$DATA_ATUAL}</p>
                 </center>            
             </div>
             <!-- fim div rodape-->
