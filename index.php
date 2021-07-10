@@ -12,7 +12,13 @@ $smarty = new Template();
 $smarty->assign('GET_TEMA', Rotas::get_SiteTema());
 
 //rota do home da página principal
-$smarty->assign('GET_HOME', Rotas::get_SiteHome());
+//$smarty->assign('GET_HOME', Rotas::get_SiteHome());
+
+//rota do home da página principal
+$smarty->assign('GET_NOME', Config::SITE_NOME);
+
+//rota do site da página principal
+$smarty->assign('GET_SITE_HOME', Rotas::get_SiteHome());
 
 //rota do carrinho
 $smarty->assign('PAG_CARRINHO', Rotas::pag_Carrinho());

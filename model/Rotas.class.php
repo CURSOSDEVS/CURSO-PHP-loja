@@ -4,7 +4,7 @@
  * utilizadas para acessar as páginas que farão parte da loja
  */
 
- class Rotas 
+  class Rotas 
  {
      //variável  pag que será utilizada 
      public static $pag;
@@ -23,6 +23,7 @@
         return Config::SITE_URL .'/'. Config::SITE_PASTA;
      }
 
+     /**************************************** */
      //método para obter a raiz do site, utilizando a 
      //função $_SERVER com DOCUMENT_ROOT que captura todo o endereço 
      //do site
@@ -108,7 +109,14 @@
      }
 
      /************************************************* */
+
+     static function get_Pasta_Controller()
+     {
+         return self::$pasta_controller;
+     }
      
+      /************************************************* */
+
      /**metodo estático para capturar a página */
      static function get_pagina()
      {
@@ -158,6 +166,9 @@
                  //se não existir será incluida a página de erro na index
                 include 'erro.php';
             }
+        }else
+        {
+           include 'home.php';
         }
      }
  }
