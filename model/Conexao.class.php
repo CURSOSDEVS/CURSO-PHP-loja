@@ -117,10 +117,15 @@ Class Conexao extends Config
             $pag .= '<li><a href="?p='.$p.'">'.$p.'</a></li>';
         }
 
-        $pag .= '<li><a href="?p='.$this->totalPaginas.'">...'.$this->totalPaginas.'>></a></li>';
+        $pag .= '<li><a href="?p='.$this->totalPaginas.'">...Fim>></a></li>';
         $pag .= '</ul>';
 
-        return $pag;
+        //se a quantidade de páginas não for maior que 1 não há necessidade de mostrar na tela a paginacao
+        if($this->totalPaginas > 1)
+        {
+            return $pag;
+        }
+        
     }
 
     //metodo para executar a criacao de botoes
