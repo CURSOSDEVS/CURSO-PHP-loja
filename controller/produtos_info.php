@@ -23,10 +23,10 @@
         $_SESSION['PRO'][$id]['id']= $pro['pro_id'];
         $_SESSION['PRO'][$id]['nome']= $pro['pro_nome'];
         $_SESSION['PRO'][$id]['valor']= $pro['pro_valor'];
-      //  $_SESSION['SESSAO_PRO'][$id]['valor_us']= $pro['pro_valor_us'];
+        $_SESSION['PRO'][$id]['valor_us']= $pro['pro_valor_us'];
         $_SESSION['PRO'][$id]['peso']= $pro['pro_peso'];
         $_SESSION['PRO'][$id]['qtd']= 1;
-        $_SESSION['PRO'][$id]['img']= $pro['pro_img_p'];
+        $_SESSION['PRO'][$id]['img']= $pro['pro_img'];
         $_SESSION['PRO'][$id]['link']= 'sssslink';
         $id++;
     }

@@ -17,16 +17,19 @@ class Carrinho
         $sub = 0.00;
         $peso = 0.00;
 
-        foreach ($_SESSION['PRO'] as $lista) {            
+        foreach ($_SESSION['PRO'] as $lista) { 
+
+            $sub = ($lista['valor_us'] * $lista['qtd']);  
+                    
             $this->itens[$i] = [
                 'pro_id'=>$lista['id'],                
                 'pro_nome'=>$lista['nome'],                  
-                'pro_valor'=>Ferramentas::formatarValorBR($lista['valor']),
+                'pro_valor'=>$lista['valor'],
                 'pro_valor_us'=>$lista['valor_us'],
                 'pro_peso'=>$lista['peso'],
                 'pro_qtd'=>$lista['qtd'],
                 //utilizando metodo para carregar o endereco e redimensionar as fotos
-                'pro_img'=> Rotas::get_linkImagem($lista['img'],180,180),
+                'pro_img'=> $lista['img'],
                 'pro_link'=> $lista['link'],
                 'pro_subTotal'=> Ferramentas::formatarValorBR($sub),
                 'pro_subTotal_us'=>$sub  

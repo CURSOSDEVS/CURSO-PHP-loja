@@ -33,8 +33,8 @@
                 <td></td> 
                 <td>Produto</td> 
                 <td>Valor R$</td> 
-                <td>X</td> 
-                <td>Sub Total R$</td> 
+                <td>Qtd</td> 
+                <td>Sub-Total R$</td> 
                 <td></td> 
                 
             </tr>
