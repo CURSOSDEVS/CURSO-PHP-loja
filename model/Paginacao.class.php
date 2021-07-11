@@ -33,10 +33,11 @@ class Paginacao extends Conexao
         //setando a quantidaade de itens na pagina
         $this->inicio = ($p * $this->limite) - $this->limite;
 
-        //total de paginas - a tolerancia por página
-        for($i = ($p - $tolerancia); $i <= $mostrar; $i++)
+        //irá percorrer a quantidade de páginas
+        for($i = 1; $i <= $paginas; $i++)
         {
-
+            //será adicionado ao array link o número da página
+            array_push($this->link, $i);
         }
     }
 }

@@ -5,6 +5,9 @@ Class Conexao extends Config
 
     private $host, $usuario, $senha, $banco;
     protected $obj, $itens= [], $prefix; //será utilizado para receber as queries
+
+    //variavel de paginacao que irá criar o link da paginacao
+    public $paginacao_links, $totalPaginas, $limite, $inicio;
     
     function __construct()
     {
@@ -80,6 +83,50 @@ Class Conexao extends Config
         return $this->itens;
     }
       
+    //metodo para criar os links da paginacao
+    function getPaginacaoLinks($campo, $tabela)
+    {
+        $pag = new Paginacao();
+        $pag->getPaginacao($campo, $tabela);
+
+        //passa o array criado na classe Paginacao
+        $this->paginacao_links = $pag->link;
+
+        //passando valores para as outras variaveis
+        $this->totalPaginas = $pag->totalPags;
+        $this->limite = $pag->limite;
+        $this->inicio = $pag->inicio;
+
+        if($this->totalPaginas > 0)
+        {
+            //retornará o limite que será utilizado no txtSql
+            return "LIMIT {$this->inicio}, {$this->limite}";
+        }else
+        {
+            return "";
+        }
+    }
+
+    //metodo para criar os botoes na página que irá receber o numero de paginas calculado na classe Paginacao
+    protected function getBotoesPaginacao($paginas = array())
+    {
+        $pag = '<ul class="pagination">';
+        $pag .= '<li><a href=""> << Início</a></li>';
+
+        foreach ($paginas as $p) {
+            $pag .= '<li><a href="">'.$p.'</a></li>';
+        }
+
+        $pag .= '</ul>';
+
+        return $pag;
+    }
+
+    //metodo para executar a criacao de botoes
+    function showBotoesPaginacao()
+    {
+        return $this->getBotoesPaginacao($this->paginacao_links);
+    }
 
 }
 

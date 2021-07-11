@@ -14,7 +14,10 @@ class Produtos extends Conexao
         //seleciona todos os produtos de uma determinada categoria, criando um prefixo para cada tabela
         $txtSql = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c ON p.pro_categoria = c.cat_id";
         
-        $txtSql.= " ORDER BY  pro_id DESC";
+        $txtSql.= " ORDER BY  pro_id DESC ";
+
+        //incluindo a paginacao
+        $txtSql.= $this->getPaginacaoLinks("pro_id", $this->prefix."produtos");
 
         $this->executeSQL($txtSql);
 
