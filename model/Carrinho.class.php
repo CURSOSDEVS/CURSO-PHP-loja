@@ -59,6 +59,56 @@ class Carrinho
         return $this->total_peso;
     }
 
+    //incrementando itens dentro do carrinho
+    function addCarrinho($id)
+    {
+        $produto = new Produtos();
+        $produto->getProdutosID($id);
+
+        $acao = NULL;
+
+        //criando uma lista para incrementar o carrinho
+        foreach ($produto->getItens() as $pro ) {
+            $idPro = $pro['pro_id'];
+            $nomePro = $pro['pro_nome'];
+            $valor_us_Pro = $pro['pro_valor_us'];
+            $valorPro = $pro['pro_valor'];
+            $pesoPro = $pro['pro_peso'];
+            $qtdPro = 1;
+            $imgPro = $pro['pro_img'];
+            $linkPro = Rotas::get_ProdutosInfo().'/'.$idPro.'/'.$pro['pro_slug'];
+            $acaoPro = $_POST['acao'];
+        }
+
+        //
+        switch ($acao) {
+            case 'add':
+                //se não existir o id no carrinho
+                if(!isset($_SESSION['PRO'][$idPro]['pro_id']))
+                {
+                    $_SESSION['PRO'][$idPro]['pro_id'] = $idPro;
+                    $_SESSION['PRO'][$idPro]['pro_nome'] = $nomePro;
+                    $_SESSION['PRO'][$idPro]['pro_valor_us'] = $valor_us_Pro;
+                    $_SESSION['PRO'][$idPro]['pro_valor'] = $valorPro;
+                    $_SESSION['PRO'][$idPro]['pro_peso'] = $pesoPro;
+                    $_SESSION['PRO'][$idPro]['qtdPro'] = $qtdPro;
+                    $_SESSION['PRO'][$idPro]['pro_img'] = $imgPro;
+                    $_SESSION['PRO'][$idPro]['linkPro'] = $linkPro;
+                    $_SESSION['PRO'][$idPro]['pro_nome'] = $nomePro;
+                }else
+                {
+
+                }
+                break;
+            case 'del':
+                # code...
+                break;
+            case 'limpar':
+                # code...
+                break;
+        }
+    }
+
 
 }
 

@@ -8,9 +8,9 @@ $smarty->assign('TOTAL', Ferramentas::formatarValorBR($carrinho->getTotalValor()
 
 $smarty->display('carrinho.tpl');
 
-echo '<pre>';
-var_dump($carrinho->getCarrinho());
-echo '</pre>';
+//echo '<pre>';
+//var_dump($carrinho->getCarrinho());
+//echo '</pre>';
 
 
 ?>
