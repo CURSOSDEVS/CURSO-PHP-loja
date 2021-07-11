@@ -16,18 +16,18 @@
     //enviando  o array para o template
     $smarty->assign('Fotos', $fotosProduto->getItens() );
 
-    //testando se a sessão está capturando os dados 
-     $id = 1;
+    //testando se a sessão está capturando os dados, pegando o id do produto da url 
+     $id = Rotas::$pag[1];
     foreach ($produto->getItens() as $pro) 
     {
-        $_SESSION['SESSAO_PRO'][$id]['id']= $pro['pro_id'];
-        $_SESSION['SESSAO_PRO'][$id]['nome']= $pro['pro_nome'];
-        $_SESSION['SESSAO_PRO'][$id]['valor']= Ferramentas::formatarValorUS($pro['pro_valor']);
+        $_SESSION['PRO'][$id]['id']= $pro['pro_id'];
+        $_SESSION['PRO'][$id]['nome']= $pro['pro_nome'];
+        $_SESSION['PRO'][$id]['valor']= $pro['pro_valor'];
       //  $_SESSION['SESSAO_PRO'][$id]['valor_us']= $pro['pro_valor_us'];
-        $_SESSION['SESSAO_PRO'][$id]['peso']= $pro['pro_peso'];
-        $_SESSION['SESSAO_PRO'][$id]['qtd']= 1;
-        $_SESSION['SESSAO_PRO'][$id]['img']= $pro['pro_img_p'];
-        $_SESSION['SESSAO_PRO'][$id]['link']= 'sssslink';
+        $_SESSION['PRO'][$id]['peso']= $pro['pro_peso'];
+        $_SESSION['PRO'][$id]['qtd']= 1;
+        $_SESSION['PRO'][$id]['img']= $pro['pro_img_p'];
+        $_SESSION['PRO'][$id]['link']= 'sssslink';
         $id++;
     }
     

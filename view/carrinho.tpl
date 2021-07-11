@@ -1,6 +1,3 @@
-<div>
-    <h3>{$SESSAO_PRO}</h3>
-</div>
 <h3>Meu Carrinho</h3>
 <hr>
 <!-- botoes e opções de cima -->
@@ -23,51 +20,51 @@
 <section class="row ">
    
     <center>
-    <table class="table table-bordered" style="width: 95%">
+        <table class="table table-bordered" style="width: 95%">
 
-<!--
-        <tr> 
+        <!--
+            <tr> 
+            
+                
+                <td colspan="6" align="right"><a href="" class="btn btn-success" title="">Comprar Mais</a></td> 
+            </tr> -->
+        
+            <tr class="text-danger bg-danger">
+                <td></td> 
+                <td>Produto</td> 
+                <td>Valor R$</td> 
+                <td>X</td> 
+                <td>Sub Total R$</td> 
+                <td></td> 
+                
+            </tr>
         
             
-            <td colspan="6" align="right"><a href="" class="btn btn-success" title="">Comprar Mais</a></td> 
-        </tr> -->
-       
-        <tr class="text-danger bg-danger">
-            <td></td> 
-            <td>Produto</td> 
-            <td>Valor R$</td> 
-            <td>X</td> 
-            <td>Sub Total R$</td> 
-            <td></td> 
+        {foreach from=$PRO item=P}
             
-        </tr>
-     
-        
-       {foreach from=$PRO item=P}
-        
-        <tr>
-            
-            <td> <img src="{$P.pro_img}" alt="{$P.pro_nome}"> </td>
-            <td>  {$P.pro_nome} </td>
-            <td>  {$P.pro_valor} </td>
-            <td> {$P.pro_qtd}  </td>
-            <td>  {$P.pro_subTotal} </td>
-            <td> 
-                <form name="carrinho_dell" method="post" action="{$PAG_CARRINHO_ALTERAR}">
-                  
-                    <input type="hidden" name="pro_id" value="{$P.pro_id}">    
-                    <input type="hidden" name="acao" value="del">    
+            <tr>
+                
+                <td> <img src="{$P.pro_img}" alt="{$P.pro_nome}"> </td>
+                <td>  {$P.pro_nome} </td>
+                <td>  {$P.pro_valor} </td>
+                <td> {$P.pro_qtd}  </td>
+                <td>  {$P.pro_subTotal} </td>
+                <td> 
+                    <form name="carrinho_dell" method="post" action="{$PAG_CARRINHO_ALTERAR}">
                     
-                    <button class="btn btn-danger btn-sm"> <i class="glyphicon glyphicon-minus"></i> </button>
-                </form>
-            </td>
+                        <input type="hidden" name="pro_id" value="{$P.pro_id}">    
+                        <input type="hidden" name="acao" value="del">    
+                        
+                        <button class="btn btn-danger btn-sm"> <i class="glyphicon glyphicon-minus"></i> </button>
+                    </form>
+                </td>
+                
+                
+            </tr>
             
+        {/foreach}
             
-        </tr>
-        
-       {/foreach}
-        
-    </table>
+        </table>
   
     </center>
         

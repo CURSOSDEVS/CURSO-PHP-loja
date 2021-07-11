@@ -17,7 +17,7 @@ class Carrinho
         $sub = 0.00;
         $peso = 0.00;
 
-        foreach ($_SESSION['SESSAO_PRO'] as $lista) {            
+        foreach ($_SESSION['PRO'] as $lista) {            
             $this->itens[$i] = [
                 'pro_id'=>$lista['id'],                
                 'pro_nome'=>$lista['nome'],                  
@@ -31,6 +31,7 @@ class Carrinho
                 'pro_subTotal'=> Ferramentas::formatarValorBR($sub),
                 'pro_subTotal_us'=>$sub  
             ];
+            $i++;
         };
 
         //se a quantidade de itens for maior de 0 significa que existe

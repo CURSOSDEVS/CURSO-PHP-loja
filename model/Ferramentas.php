@@ -9,7 +9,7 @@
 
         static function formatarValorUS($valor)
         {
-            $retorno = number_format($valor,2,'.','');
+            $retorno = number_format($valor,2,'.',',');
             return $retorno;
         }
 
