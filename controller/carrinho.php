@@ -4,7 +4,7 @@ $smarty = new Template();
 $carrinho = new Carrinho();
 
 $smarty->assign('PRO', $carrinho->getCarrinho());
-$smarty->assign('TOTAL', '100.00');
+$smarty->assign('TOTAL', Ferramentas::formatarValorBR($carrinho->getTotalValor()));
 
 $smarty->display('carrinho.tpl');
 

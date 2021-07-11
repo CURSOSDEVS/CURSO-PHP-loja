@@ -20,7 +20,8 @@ class Carrinho
         foreach ($_SESSION['PRO'] as $lista) { 
 
             $sub = ($lista['valor_us'] * $lista['qtd']);  
-                    
+            $this->total_valor += $sub;
+
             $this->itens[$i] = [
                 'pro_id'=>$lista['id'],                
                 'pro_nome'=>$lista['nome'],                  
@@ -46,6 +47,18 @@ class Carrinho
             return '<h4 class="alert alert-danger">Não há produtos no carrinho!</h4>';
         }
     }
+
+    //retornar o total do carrinho
+    function getTotalValor()
+    {
+        return $this->total_valor;
+    }
+
+    function getTotalPeso()
+    {
+        return $this->total_peso;
+    }
+
 
 }
 
