@@ -7,6 +7,12 @@
             return $retorno;
         }
 
+        static function formatarValorUS($valor)
+        {
+            $retorno = number_format($valor,2,'.','');
+            return $retorno;
+        }
+
         static function dataAtualBR()
         {
             return date('d/m/Y');
