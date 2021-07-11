@@ -1,5 +1,11 @@
 <?php
 
+//verificamos se não existir uma sessão então será criada uma nova
+if(!isset($_SESSION))
+{
+    session_start();
+}
+
 //com a indicação  ao autoload da pasta lib
 //as referências são automaticamente carregadas
 require "./lib/autoload.php";
