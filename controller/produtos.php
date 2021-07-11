@@ -13,7 +13,7 @@
         $smarty->assign('TITULO', Rotas::$pag[2]);
     }else{
         $produto->getProdutos();
-        $smarty->assign('TITULO', 'Lista de produtos');
+        $smarty->assign('TITULO', '');
     }
 
     $smarty->assign('PRO', $produto->getItens());
