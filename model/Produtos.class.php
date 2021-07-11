@@ -12,12 +12,14 @@ class Produtos extends Conexao
     function getProdutos()
     {
         //seleciona todos os produtos de uma determinada categoria, criando um prefixo para cada tabela
-        $txtSql = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c ON p.pro_categoria = c.cat_id";
+        $txtSql = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c ON p.pro_categoria = c.cat_id ";
         
-        $txtSql.= " ORDER BY  pro_id DESC ";
+        //$txtSql.= " ORDER BY  pro_id DESC ";
 
-        //incluindo a paginacao
+        //incluindo o limite de paginacao na query atraves da funcao getPaginacaoLinks
         $txtSql.= $this->getPaginacaoLinks("pro_id", $this->prefix."produtos");
+
+        //echo $txtSql;
 
         $this->executeSQL($txtSql);
 
@@ -46,11 +48,17 @@ class Produtos extends Conexao
 
     function getProdutosCateID($idCat)
     {
+        //verificando o parãmetro fornecido para evita sqlinjection atraves da função do php filter_var
+        $idCat = filter_var($idCat, FILTER_SANITIZE_NUMBER_INT);
+
         //seleciona todos os produtos de uma determinada categoria, criando um prefixo para cada tabela
         $txtSql = "SELECT * FROM {$this->prefix}produtos p INNER JOIN {$this->prefix}categorias c 
         ON p.pro_categoria = c.cat_id";
         
-        $txtSql .= " AND p.pro_categoria = :idCat";
+        $txtSql .= " AND pro_categoria = :idCat ";
+
+        //incluindo o limite de paginacao na query atraves da funcao getPaginacaoLinks
+        $txtSql.= $this->getPaginacaoLinks("pro_id", $this->prefix."produtos WHERE pro_categoria =".(int)$idCat);
 
         $parametros = array (
                         ':idCat'=>$idCat

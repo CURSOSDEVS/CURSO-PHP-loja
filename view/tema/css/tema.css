@@ -92,3 +92,8 @@ a.list-group-item{
     box-shadow:6px 6px 10px #adadad;
 }
 
+.pagination>li>a{
+     background-color: #204d74;
+     color: #fff;
+}
+

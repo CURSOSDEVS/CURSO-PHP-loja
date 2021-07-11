@@ -83,7 +83,7 @@ Class Conexao extends Config
         return $this->itens;
     }
       
-    //metodo para criar os links da paginacao
+    //metodo para criar o limite da query que será utilizado na query da classe 
     function getPaginacaoLinks($campo, $tabela)
     {
         $pag = new Paginacao();
@@ -111,10 +111,10 @@ Class Conexao extends Config
     protected function getBotoesPaginacao($paginas = array())
     {
         $pag = '<ul class="pagination">';
-        $pag .= '<li><a href=""> << Início</a></li>';
+        $pag .= '<li><a href="?p=1"> << Início</a></li>';
 
         foreach ($paginas as $p) {
-            $pag .= '<li><a href="">'.$p.'</a></li>';
+            $pag .= '<li><a href="?p='.$p.'">'.$p.'</a></li>';
         }
 
         $pag .= '</ul>';

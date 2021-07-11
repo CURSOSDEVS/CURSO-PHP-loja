@@ -6,12 +6,6 @@
     <h4 class="alert alert-danger">Nenhum produto encontrado</h4>
 {{/if}}
 
-<section id="paginacao" class="row">
-    <center>
-        PAGINAS
-    </center>
-</section>
-
 <!--COMEÇA LISTA DE PRODUTOS-->
 <section id="produtos" class="row">
     <ul style="list-style: none">
@@ -36,6 +30,6 @@
 
 <section id="paginacao" class="row">
     <center>
-        PAGINAS
+        {$PAGINAS}
     </center>
 </section>

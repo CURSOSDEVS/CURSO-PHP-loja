@@ -20,8 +20,12 @@
 
     //Informacao do produto
     $smarty->assign('PRO_INFO', Rotas::get_ProdutosInfo());
+
     //informação do total de dados
     $smarty->assign('PRO_TOTAL', $produto->totalDados());
+    
+    //criacao da paginacao do template mostrando os botoes
+    $smarty->assign('PAGINAS', $produto->showBotoesPaginacao());
 
   
     $smarty->display('produtos.tpl');
