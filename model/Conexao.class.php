@@ -112,11 +112,12 @@ Class Conexao extends Config
     {
         $pag = '<ul class="pagination">';
         $pag .= '<li><a href="?p=1"> << Início</a></li>';
-
+      
         foreach ($paginas as $p) {
             $pag .= '<li><a href="?p='.$p.'">'.$p.'</a></li>';
         }
 
+        $pag .= '<li><a href="?p='.$this->totalPaginas.'">...'.$this->totalPaginas.'>></a></li>';
         $pag .= '</ul>';
 
         return $pag;

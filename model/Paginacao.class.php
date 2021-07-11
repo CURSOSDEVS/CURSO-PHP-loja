@@ -7,7 +7,7 @@ class Paginacao extends Conexao
         parent::__construct();
     }
 
-    public $limite, $inicio, $totalPags, $link = array(), $tolerancia, $mostrar;
+    public $limite, $inicio, $totalPags, $link = array() ;
 
     //metodo que irá receber o campo e a tabela que receberá a paginacao
     function getPaginacao($campo, $tabela)
@@ -30,12 +30,31 @@ class Paginacao extends Conexao
         //verifica se está vindo via get o numero de paginas se não fornece 1 como número de paginas
         $p = (int)isset($_GET['p']) ? $_GET['p'] : 1;
 
+        //caso seja passado algum número maior que o número total de páginas p receberá o total de páginas
+        //para evitar algum erro
+        if($p > $paginas){
+           $p = $paginas;
+        }
+
         //setando a quantidaade de itens na pagina
         $this->inicio = ($p * $this->limite) - $this->limite;
 
+        // variavel que irá delimitar a qtd de botoes na pagina
+        $tolerancia = 4;
+
+        //verifica se  
+        $mostrar = $p + $tolerancia;
+
+        if($mostrar > $paginas){
+            $mostrar = $paginas;
+        }
+
         //irá percorrer a quantidade de páginas
-        for($i = 1; $i <= $paginas; $i++)
+        for($i = ($p - $tolerancia); $i <= $mostrar; $i++)
         {
+            if($i < 1){
+                $i = 1;
+            }
             //será adicionado ao array link o número da página
             array_push($this->link, $i);
         }
