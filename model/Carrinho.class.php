@@ -128,6 +128,19 @@ class Carrinho
         }
     }
 
+    /**Método utilizado para excluir um produto dentro da sessão do carrinho,
+     * por isso passamos o id do produto
+     */
+    private function excluirProdutoCarrinho()
+    {
+        unset($_SESSION['PRO'][$ID]);
+    }
+
+    private function excluirCarrinho()
+    {
+        unset($_SESSION['PRO']);
+    }
+
 
 }
 
