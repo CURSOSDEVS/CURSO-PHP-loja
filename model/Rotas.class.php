@@ -143,7 +143,7 @@
      //metodo para finalizar o pedido
      static function pag_Finalizar_Pedido()
      {
-        return self::get_SiteHome().'/';
+        return self::get_SiteHome().'/pedido_finalizar';
      }
 
      /************************************************* */
