@@ -9,12 +9,7 @@ if(isset($_SESSION['PRO']))
 
     $smarty->assign('PRO', $carrinho->getCarrinho());
     $smarty->assign('TOTAL', Ferramentas::formatarValorBR($carrinho->getTotalValor()));
-    $smarty->assign('PAG_CARRINHO_ALTERAR', Rotas::pag_AlterarCarrinho());
-    $smarty->assign('PAG_CARRINHO', Rotas::pag_Carrinho());
-    $smarty->assign('PAG_FINALIZAR', Rotas::pag_Finalizar_Pedido());
     $smarty->assign('TEMA', Rotas::get_SiteTema());
-
-
     $smarty->display('pedido_finalizar.tpl');
 }else
 {

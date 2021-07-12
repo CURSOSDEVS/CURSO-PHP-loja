@@ -52,6 +52,7 @@
             </div>
         </section>
             <br>
+            <!--Formas de pagamento aqui -->
             <section class="row">
                 <h3 class="text-center"> Formas de pagamento </h3>     
                 
@@ -63,9 +64,14 @@
                 <div class="col-md-4">
                 
                 <img src="{$TEMA}/images/logo-pagseguro.png"  alt=""> 
-                    <script type="text/javascript" src="{$PS_SCRIPT}"></script>
+                
                     
                 </div>
+                <div class="col-md-4">
+                    <img src="{$TEMA}/images/deposito.gif"  alt=""> 
+                    <script type="text/javascript" src="{$PS_SCRIPT}"></script>
+                </div>
+
                 <div class="col-md-4">
                     
                 </div>
