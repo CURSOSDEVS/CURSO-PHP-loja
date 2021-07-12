@@ -10,11 +10,10 @@ if(isset($_SESSION['PRO']))
     $smarty->assign('PRO', $carrinho->getCarrinho());
     $smarty->assign('TOTAL', Ferramentas::formatarValorBR($carrinho->getTotalValor()));
     $smarty->assign('PAG_CARRINHO_ALTERAR', Rotas::pag_AlterarCarrinho());
-    $smarty->assign('PAG_CONFIRMAR', Rotas::pag_pedido_confirmar());
-    $smarty->assign('PAG_PRODUTOS', Rotas::pag_Produtos());
+    $smarty->assign('PAG_CARRINHO', Rotas::pag_Carrinho());
+    $smarty->assign('PAG_FINALIZAR', Rotas::pag_Finalizar_Pedido());
 
-
-    $smarty->display('carrinho.tpl');
+    $smarty->display('pedido_confirmar.tpl');
 }else
 {
     //se não exisir será mostrado uma mensagem para o usuário e será redirecionado

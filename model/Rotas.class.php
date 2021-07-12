@@ -54,12 +54,7 @@
      }
 
      /***************************************** */
-     //metodo para redirecionar a uma página específica 
-     static function redirecionar($tempo, $pagina)
-     {
-        $url = '<meta http-equiv="refresh" content="'.$tempo.'; url='.$pagina.'">';
-        echo $url;
-     }
+     
      /***************************************** */
      //metodo que carregará a página do contato
      static function pag_Contato()
@@ -130,7 +125,28 @@
      }
      
       /************************************************* */
+      //metodo para redirecionar a uma página específica 
+     static function redirecionar($tempo, $pagina)
+     {
+        $url = '<meta http-equiv="refresh" content="'.$tempo.'; url='.$pagina.'">';
+        echo $url;
+     }
 
+     /************************************************* */
+     //metodo para confirmar o pedido
+     static function pag_pedido_confirmar()
+     {
+        return self::get_SiteHome().'/pedido_confirmar';
+     }
+
+     /************************************************* */
+     //metodo para finalizar o pedido
+     static function pag_Finalizar_Pedido()
+     {
+        return self::get_SiteHome().'/';
+     }
+
+     /************************************************* */
      /**metodo estático para capturar a página */
      static function get_pagina()
      {
