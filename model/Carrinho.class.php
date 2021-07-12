@@ -7,7 +7,7 @@
 
 class Carrinho
 {
-    private $total_valor, $total_peso, $itens = array();
+    private $total_valor, $total_peso, $itens = array(), $qtd_prod;
 
     //para obter um carrinho a sessão tem que ser nula
     function getCarrinho($sessao=NULL)
@@ -19,19 +19,19 @@ class Carrinho
 
         foreach ($_SESSION['PRO'] as $lista) { 
 
-            $sub = ($lista['valor_us'] * $lista['qtd']);  
+            $sub = ($lista['VALOR_US'] * $lista['QTD']);  
             $this->total_valor += $sub;
 
             $this->itens[$i] = [
-                'pro_id'=>$lista['id'],                
-                'pro_nome'=>$lista['nome'],                  
-                'pro_valor'=>$lista['valor'],
-                'pro_valor_us'=>$lista['valor_us'],
-                'pro_peso'=>$lista['peso'],
-                'pro_qtd'=>$lista['qtd'],
+                'pro_id'=>$lista['ID'],                
+                'pro_nome'=>$lista['NOME'],                  
+                'pro_valor'=>$lista['VALOR'],
+                'pro_valor_us'=>$lista['VALOR_US'],
+                'pro_peso'=>$lista['PESO'],
+                'pro_qtd'=>$lista['QTD'],
                 //utilizando metodo para carregar o endereco e redimensionar as fotos
-                'pro_img'=> $lista['img'],
-                'pro_link'=> $lista['link'],
+                'pro_img'=> $lista['IMG'],
+                'pro_link'=> $lista['LINK'],
                 'pro_subTotal'=> Ferramentas::formatarValorBR($sub),
                 'pro_subTotal_us'=>$sub  
             ];
@@ -65,41 +65,60 @@ class Carrinho
         $produto = new Produtos();
         $produto->getProdutosID($id);
 
-        $acao = NULL;
-
-        //criando uma lista para incrementar o carrinho
+        ///criando uma lista para incrementar o carrinho
+      
         foreach ($produto->getItens() as $pro ) {
-            $idPro = $pro['pro_id'];
-            $nomePro = $pro['pro_nome'];
-            $valor_us_Pro = $pro['pro_valor_us'];
-            $valorPro = $pro['pro_valor'];
-            $pesoPro = $pro['pro_peso'];
-            $qtdPro = 1;
-            $imgPro = $pro['pro_img'];
-            $linkPro = Rotas::get_ProdutosInfo().'/'.$idPro.'/'.$pro['pro_slug'];
-            $acaoPro = $_POST['acao'];
+            $ID = $pro['pro_id'];
+            $NOME = $pro['pro_nome'];
+            $VALOR_US = $pro['pro_valor_us'];
+            $VALOR = $pro['pro_valor'];
+            $PESO = $pro['pro_peso'];
+            $QTD = 1;
+            $IMG = $pro['pro_img'];
+            $LINK = Rotas::get_ProdutosInfo().'/'.$pro['pro_id'].'/'.$pro['pro_slug'];
+            $ACAO = $_POST['acao'];
         }
 
+        /*
+        $_SESSION['PRO'][$id]['id']= $pro['pro_id'];
+        $_SESSION['PRO'][$id]['nome']= $pro['pro_nome'];
+        $_SESSION['PRO'][$id]['valor']= $pro['pro_valor'];
+        $_SESSION['PRO'][$id]['valor_us']= $pro['pro_valor_us'];
+        $_SESSION['PRO'][$id]['peso']= $pro['pro_peso'];
+        $_SESSION['PRO'][$id]['qtd']= 1;
+        $_SESSION['PRO'][$id]['img']= $pro['pro_img'];
+        $_SESSION['PRO'][$id]['link']= 'sssslink';
+        $id++; */
+
+       // echo '<pre>';
+       // var_dump($produto->get)
+
         //
-        switch ($acao) {
+        switch ($ACAO) {
             case 'add':
-                //se não existir o id no carrinho
-                if(!isset($_SESSION['PRO'][$idPro]['pro_id']))
+                //quando o usuário clicar no botão comprar na página produto-info
+                //os dados do produto serão passados para a sessão atual e se não existir o id no carrinho o produto será 
+                //adicionado ao carrinho
+                
+                if(!isset($_SESSION['PRO'][$ID]['ID']))
                 {
-                    $_SESSION['PRO'][$idPro]['pro_id'] = $idPro;
-                    $_SESSION['PRO'][$idPro]['pro_nome'] = $nomePro;
-                    $_SESSION['PRO'][$idPro]['pro_valor_us'] = $valor_us_Pro;
-                    $_SESSION['PRO'][$idPro]['pro_valor'] = $valorPro;
-                    $_SESSION['PRO'][$idPro]['pro_peso'] = $pesoPro;
-                    $_SESSION['PRO'][$idPro]['qtdPro'] = $qtdPro;
-                    $_SESSION['PRO'][$idPro]['pro_img'] = $imgPro;
-                    $_SESSION['PRO'][$idPro]['linkPro'] = $linkPro;
-                    $_SESSION['PRO'][$idPro]['pro_nome'] = $nomePro;
+                    $_SESSION['PRO'][$ID]['ID'] = $ID;
+                    $_SESSION['PRO'][$ID]['NOME'] = $NOME;
+                    $_SESSION['PRO'][$ID]['VALOR'] = $VALOR;
+                    $_SESSION['PRO'][$ID]['VALOR_US'] = $VALOR_US;
+                    $_SESSION['PRO'][$ID]['PESO'] = $PESO;
+                    $_SESSION['PRO'][$ID]['QTD'] = $QTD;
+                    $_SESSION['PRO'][$ID]['IMG'] = $IMG;
+                    $_SESSION['PRO'][$ID]['LINK'] = $LINK;                    
                 }else
                 {
-
+                    //se o produto existe então deve ser acrescentado uma unidade ao produto no carrinho                   
+                    $_SESSION['PRO'][$ID]['QTD'] += $QTD ;
+                    
                 }
+                echo '<h4 class="alert alert-success"> Produto Inserido.</h4>';                
                 break;
+
             case 'del':
                 # code...
                 break;

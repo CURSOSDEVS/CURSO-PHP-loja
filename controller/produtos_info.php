@@ -17,7 +17,7 @@
     $smarty->assign('Fotos', $fotosProduto->getItens() );
 
     //testando se a sessão está capturando os dados, pegando o id do produto da url 
-     $id = Rotas::$pag[1];
+    /* $id = Rotas::$pag[1];
     foreach ($produto->getItens() as $pro) 
     {
         $_SESSION['PRO'][$id]['id']= $pro['pro_id'];
@@ -29,8 +29,10 @@
         $_SESSION['PRO'][$id]['img']= $pro['pro_img'];
         $_SESSION['PRO'][$id]['link']= 'sssslink';
         $id++;
-    }
+    }*/
     
+    //enviando comando para o botão comprar
+    $smarty->assign('PAG_COMPRAR', Rotas::pag_AlterarCarrinho());
 
     $smarty->display('produtos_info.tpl');
 

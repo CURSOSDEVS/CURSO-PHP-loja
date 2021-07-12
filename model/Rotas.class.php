@@ -47,6 +47,13 @@
      }
 
      /***************************************** */
+     //metodo que carregará a página do carrinho
+     static function pag_AlterarCarrinho()
+     {
+        return self::get_SiteHome(). '/carrinho_alterar';
+     }
+
+     /***************************************** */
      //metodo que carregará a página do contato
      static function pag_Contato()
      {
