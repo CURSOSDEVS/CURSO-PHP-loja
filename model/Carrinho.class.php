@@ -120,10 +120,12 @@ class Carrinho
                 break;
 
             case 'del':
-                # code...
+                $this->excluirProdutoCarrinho($ID);
+                echo '<h4 class="alert alert-success"> Produto removido do carrinho!</h4>';  
                 break;
             case 'limpar':
-                # code...
+                $this->excluirCarrinho();
+                echo '<h4 class="alert alert-success"> Todos produto removidos do carrinho!</h4>'; 
                 break;
         }
     }
@@ -131,9 +133,16 @@ class Carrinho
     /**Método utilizado para excluir um produto dentro da sessão do carrinho,
      * por isso passamos o id do produto
      */
-    private function excluirProdutoCarrinho()
+    private function excluirProdutoCarrinho($ID)
     {
-        unset($_SESSION['PRO'][$ID]);
+        if($_SESSION['PRO'][$ID]['QTD'] > 1 )
+        {
+            $_SESSION['PRO'][$ID]['QTD'] = $_SESSION['PRO'][$ID]['QTD'] - 1;
+        }else
+        {
+            unset($_SESSION['PRO'][$ID]);
+        }
+        
     }
 
     private function excluirCarrinho()

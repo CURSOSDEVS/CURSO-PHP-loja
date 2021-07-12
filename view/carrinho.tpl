@@ -4,7 +4,7 @@
 <section class="row">
     
     <div class="col-md-12 " align="right">
-        <a href="{$PAG_PRODUTOS}" class="btn btn-info" title="">Comprar Mais</a>
+        <a href="{$PAG_PRODUTOS}" class="btn btn-success" title="">Comprar Mais</a>
     </div>
     <div class="col-md-4">
         

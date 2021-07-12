@@ -9,6 +9,8 @@ if(isset($_SESSION['PRO']))
 
     $smarty->assign('PRO', $carrinho->getCarrinho());
     $smarty->assign('TOTAL', Ferramentas::formatarValorBR($carrinho->getTotalValor()));
+    $smarty->assign('PAG_CARRINHO_ALTERAR', Rotas::pag_AlterarCarrinho());
+    //$smarty->assign('PAG_CARRINHO_ALTERAR', Rotas::pag_AlterarCarrinho());
 
     $smarty->display('carrinho.tpl');
 }else
