@@ -54,6 +54,13 @@
      }
 
      /***************************************** */
+     //metodo para redirecionar a uma página específica 
+     static function redirecionar($tempo, $pagina)
+     {
+        $url = '<meta http-equiv="refresh" content="'.$tempo.'; url='.$pagina.'">';
+        echo $url;
+     }
+     /***************************************** */
      //metodo que carregará a página do contato
      static function pag_Contato()
      {
