@@ -17,6 +17,25 @@
         {
             return date('d/m/Y');
         }
+
+        /**
+         * 
+         * @return String: data atual US (formato MYSQL)
+         */
+        static function DataAtualUS()
+        {
+            return date('Y-m-d') ;
+        }
+        
+        /**
+         * 
+         * @return string: hora atual, hora , minuto e segundo
+         */
+        static function HoraAtual(){
+            
+            return date('H:i:s') ;
+        }
+
     }
     
 

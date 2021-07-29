@@ -2,6 +2,10 @@
 //fazendo uma verificação para ver se existe uma sessão PRO
 //se não existir sessão a página do carrinho não será carregada, será feito redicionamento
 //para página dos produtos
+
+//mostrando a sessão
+echo $_SESSION['pedido'];
+
 if(isset($_SESSION['PRO']))
 {
     $smarty = new Template();

@@ -10,6 +10,19 @@ if(isset($_SESSION['PRO']))
     $smarty->assign('PRO', $carrinho->getCarrinho());
     $smarty->assign('TOTAL', Ferramentas::formatarValorBR($carrinho->getTotalValor()));
     $smarty->assign('TEMA', Rotas::get_SiteTema());
+
+    //testando a execução de um pedido
+    $pedido = new Pedidos();
+    $cliente = 1;
+    $cod = $_SESSION['pedido'];
+    $ref = '05441ref';
+
+    //irá executar a limpeza somente se a gravação for realizada    
+    if($pedido->PedidoGravar($cliente, $cod, $ref))
+    {
+        $pedido->LimparSessoes();
+    }
+
     $smarty->display('pedido_finalizar.tpl');
 }else
 {

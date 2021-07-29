@@ -1,11 +1,16 @@
 <h3>Finalizar o pedido</h3>
 <hr>
 <!-- botoes e opções de cima -->
+<section class="row">
+    
+</section>
 
 <!--  table listagem de itens -->
 <section class="row ">
    
     <center>
+    <div class="alert alert-success">Pedido Finalizado com sucesso
+    </div>
         <table class="table table-bordered" style="width: 95%">
 
             <tr class="text-danger bg-danger">
@@ -67,11 +72,7 @@
                 
                     
                 </div>
-                <div class="col-md-4">
-                    <img src="{$TEMA}/images/deposito.gif"  alt=""> 
-                    <script type="text/javascript" src="{$PS_SCRIPT}"></script>
-                </div>
-
+                
                 <div class="col-md-4">
                     
                 </div>

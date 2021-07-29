@@ -6,6 +6,11 @@ if(!isset($_SESSION))
     session_start();
 }
 
+if(!isset($_SESSION['pedido']))
+{
+    $_SESSION['pedido']=md5(uniqid(date('YmdHms')));
+}
+
 //com a indicação  ao autoload da pasta lib
 //as referências são automaticamente carregadas
 require "./lib/autoload.php";

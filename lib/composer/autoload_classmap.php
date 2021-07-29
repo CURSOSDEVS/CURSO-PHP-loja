@@ -13,6 +13,7 @@ return array(
     'Config' => $baseDir . '/model/Config.class.php',
     'Ferramentas' => $baseDir . '/model/Ferramentas.php',
     'Paginacao' => $baseDir . '/model/Paginacao.class.php',
+    'Pedidos' => $baseDir . '/model/Pedido.class.php',
     'Produtos' => $baseDir . '/model/Produtos.class.php',
     'ProdutosImages' => $baseDir . '/model/ProdutosImages.class.php',
     'Rotas' => $baseDir . '/model/Rotas.class.php',
