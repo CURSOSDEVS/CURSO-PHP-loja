@@ -49,9 +49,7 @@ class Login extends Conexao
             $_SESSION['CLI']['cli_data_nasc'] = $lista['cli_data_nasc'];
             $_SESSION['CLI']['cli_data_cad'] = $lista['cli_data_cad'];
             $_SESSION['CLI']['cli_hora_cad'] = $lista['cli_hora_cad']; 
-            echo 'login efetuado';
-        }else{
-            echo 'login não efetuado';
+            
         }
     }
 
@@ -73,6 +71,27 @@ class Login extends Conexao
     function getSenha()
     {
         return $this->senha;
+    }
+
+    //funcao para verificar se existe sessão de cliente ativa
+    static function Logado()
+    {
+        //se existe um email válido e um id
+        if(isset($_SESSION['CLI']['cli_email']) && isset($_SESSION['CLI']['cli_id']) )
+        {
+            return true;
+        }else
+        {
+            return false;
+        }
+    }
+
+    //função para logout
+    static function logout()
+    {
+        unset($_SESSION['CLI']);
+        echo '<h4 class="alert alert-success">Saindo....</h4>';
+        Rotas::redirecionar(2,Rotas::get_SiteHome());
     }
 
 }

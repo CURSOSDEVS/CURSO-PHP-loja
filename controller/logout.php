@@ -1,0 +1,4 @@
+<?php
+//ESTE CONTROLER SOMENTE CHAMA O METODO DE LOGOUT NA CLASSE LOGIN
+    Login::logout();
+?>

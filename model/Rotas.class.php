@@ -147,6 +147,15 @@
      }
 
      /************************************************* */
+     //metodo para realizar o logout
+     static function pag_logout()
+     {
+        return self::get_SiteHome().'/logout';
+     }
+
+     
+     /************************************************* */
+
      /**metodo estático para capturar a página */
      static function get_pagina()
      {
