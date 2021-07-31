@@ -21,6 +21,38 @@ class Login extends Conexao
                     ':senha'=> $this->getSenha() ];
 
         $this->executeSQL($query, $params);
+
+        //verifica se foi recuperado algum usuário
+        if($this->totalDados() > 0)
+        {   
+            //carrega os dados do usuário na variavel lista
+            $lista = $this->listarDados();
+
+            //criamos uma nova sessão com os dados do cliente
+            //para recuperar essas informaçoes posteriormente
+            $_SESSION['CLI']['cli_id'] = $lista['cli_id'];
+            $_SESSION['CLI']['cli_nome'] = $lista['cli_nome'];
+            $_SESSION['CLI']['cli_sobrenome'] = $lista['cli_sobrenome'];
+            $_SESSION['CLI']['cli_endereco'] = $lista['cli_endereco'];
+            $_SESSION['CLI']['cli_numero'] = $lista['cli_numero'];
+            $_SESSION['CLI']['cli_bairro'] = $lista['cli_bairro'];
+            $_SESSION['CLI']['cli_cidade'] = $lista['cli_cidade'];
+            $_SESSION['CLI']['cli_uf'] = $lista['cli_uf'];
+            $_SESSION['CLI']['cli_cep'] = $lista['cli_cep'];
+            $_SESSION['CLI']['cli_cpf'] = $lista['cli_cpf'];
+            $_SESSION['CLI']['cli_rg'] = $lista['cli_rg'];
+            $_SESSION['CLI']['cli_ddd'] = $lista['cli_id'];
+            $_SESSION['CLI']['cli_fone'] = $lista['cli_fone'];
+            $_SESSION['CLI']['cli_celular'] = $lista['cli_id'];
+            $_SESSION['CLI']['cli_email'] = $lista['cli_email'];
+            $_SESSION['CLI']['cli_pass'] = $lista['cli_pass'];
+            $_SESSION['CLI']['cli_data_nasc'] = $lista['cli_data_nasc'];
+            $_SESSION['CLI']['cli_data_cad'] = $lista['cli_data_cad'];
+            $_SESSION['CLI']['cli_hora_cad'] = $lista['cli_hora_cad']; 
+            echo 'login efetuado';
+        }else{
+            echo 'login não efetuado';
+        }
     }
 
     private function setUsuario($usuario)
@@ -31,6 +63,16 @@ class Login extends Conexao
     private function setSenha($senha)
     {
         $this->senha = $senha;
+    }
+
+    function getUsuario()
+    {
+        return $this->usuario;
+    }
+
+    function getSenha()
+    {
+        return $this->senha;
     }
 
 }

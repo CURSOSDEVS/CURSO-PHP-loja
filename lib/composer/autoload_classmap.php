@@ -12,6 +12,7 @@ return array(
     'Conexao' => $baseDir . '/model/Conexao.class.php',
     'Config' => $baseDir . '/model/Config.class.php',
     'Ferramentas' => $baseDir . '/model/Ferramentas.php',
+    'Login' => $baseDir . '/model/Login.class.php',
     'Paginacao' => $baseDir . '/model/Paginacao.class.php',
     'Pedidos' => $baseDir . '/model/Pedido.class.php',
     'Produtos' => $baseDir . '/model/Produtos.class.php',
