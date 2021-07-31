@@ -52,6 +52,19 @@ $smarty->assign('GET_CATEGORIAS', Rotas::get_Categorias() );
 //Enviando a data atual para o template
 $smarty->assign('DATA_ATUAL', Ferramentas::dataAtualBR());
 
+//vai para a página de logout
+$smarty->assign('PAG_LOGOUT', Rotas::pag_Logout() );
+
+//envia a situação do usuário logado ou não
+$smarty->assign('LOGADO', Login::Logado());
+
+//se o cliente estiver logado irá recuperar o nome do cliente
+if(Login::Logado())
+{
+    $smarty->assign('USER', $_SESSION['CLI']['cli_nome']);
+   
+}
+
 //testando o banco de dados
 //$dados = new Conexao();
 //$sql = 'SELECT * FROM categorias';

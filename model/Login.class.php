@@ -60,7 +60,7 @@ class Login extends Conexao
 
     private function setSenha($senha)
     {
-        $this->senha = $senha;
+        $this->senha =  $senha;
     }
 
     function getUsuario()

@@ -32,9 +32,22 @@
                  
                 
                 <div class="container">
-                <img src="{$GET_TEMA}/images/logo.png" alt=""> 
+                    <div class="col-md-6">
+                        <img src="{$GET_TEMA}/images/logo.png" alt=""> 
                        
-                </div>    
+                    </div> 
+
+                    <!--adiciona o botão para sair e o usuário logado-->
+                    <div class="col-md-6 text-right"> 
+                        <br>                   
+                        {if $LOGADO == true}
+                            Olá: {$USER} <a href="{$PAG_LOGOUT}"
+                            class="btn btn-success"><i class="glyphicon glypicon-log-out">
+                            </i>Sair</a>
+                        {/if}
+
+                    </div>
+                </div>
             
             </div><!-- fim da div topo -->
             
